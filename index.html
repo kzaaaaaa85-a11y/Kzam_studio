@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; media-src 'self'; style-src 'unsafe-inline'; script-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#3E2723">
     <title>قالب محتوى الكافيهات - Kzam Studio</title>
     <meta name="description" content="30 تصميم جاهز للنشر شهرياً لكافيهك، مع نصوص عربية وقوالب Canva قابلة للتعديل.">
     <style>
@@ -51,6 +54,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--gold);
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -63,6 +67,10 @@
             color: var(--white);
             text-decoration: none;
             transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 0 0.35rem;
         }
 
         .nav-links a:hover {
@@ -487,6 +495,10 @@
         footer a {
             color: var(--gold);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 0 0.5rem;
         }
 
         footer a:hover {
@@ -496,7 +508,11 @@
         /* Responsive */
         @media (max-width: 768px) {
             header {
-                padding: 1rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
             }
 
             .hero h1 {
@@ -512,7 +528,7 @@
             }
 
             .nav-links {
-                gap: 1rem;
+                gap: 0.15rem;
                 font-size: 0.9rem;
             }
 
@@ -560,7 +576,7 @@
         <div class="hero-content">
             <h1>30 تصميم جاهز للنشر <span class="highlight">شهرياً</span></h1>
             <p>محتوى احترافي لكافيهك بدون تصميم ولا وقت مهدور</p>
-            <button class="cta-primary" onclick="scrollToSection('pricing')">ابدأ الآن</button>
+            <button class="cta-primary" data-scroll="pricing">ابدأ الآن</button>
         </div>
     </section>
 
@@ -751,7 +767,7 @@
         <div class="container">
             <h2>ابدأ محتواك الاحترافي اليوم</h2>
             <p>30 تصميم شهري + Canva Access + Support</p>
-            <button class="cta-secondary" onclick="scrollToSection('pricing')">اختار Plan وابدأ</button>
+            <button class="cta-secondary" data-scroll="pricing">اختار Plan وابدأ</button>
         </div>
     </section>
 
@@ -764,13 +780,6 @@
         </p>
     </footer>
 
-    <script>
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    </script>
+    <script src="js/site.js" defer></script>
 </body>
 </html>
