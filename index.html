@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قالب محتوى الكافيهات - Kzam Studio</title>
+    <meta name="description" content="30 تصميم جاهز للنشر شهرياً لكافيهك، مع نصوص عربية وقوالب Canva قابلة للتعديل.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --brown: #3E2723;
+            --light-brown: #5D4037;
+            --cream: #F5F1E8;
+            --white: #FFFFFF;
+            --text: #2C2C2C;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--brown);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--brown) 0%, var(--light-brown) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero .highlight {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--brown);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-primary:hover {
+            background: #E5C158;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--brown);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--gold);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: var(--brown);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Gallery/Preview Section */
+        .gallery {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: var(--cream);
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-brown) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Reel Section */
+        .reel {
+            padding: 5rem 2rem;
+            background: var(--brown);
+            color: var(--white);
+        }
+
+        .reel .section-title {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .reel-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .reel-frame {
+            width: min(320px, 100%);
+            aspect-ratio: 9 / 16;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+            background: #000;
+            flex-shrink: 0;
+        }
+
+        .reel-frame video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .reel-text {
+            max-width: 420px;
+        }
+
+        .reel-lead {
+            text-align: center;
+            font-size: 1.15rem;
+            opacity: 0.95;
+        }
+
+        .reel-text h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .reel-text ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .reel-text li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .reel-text li:last-child {
+            border-bottom: none;
+        }
+
+        /* What's Included Section */
+        .included {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .included-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .check-icon {
+            color: var(--gold);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .included-item h4 {
+            color: var(--brown);
+            margin-bottom: 0.3rem;
+        }
+
+        .included-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .price-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--gold);
+            background: var(--white);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(212,175,55,0.2);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--brown);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .price-card h3 {
+            color: var(--brown);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .price small {
+            font-size: 0.6em;
+            color: #666;
+        }
+
+        .price-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .price-card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .price-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--gold) 0%, #E5C158 100%);
+            text-align: center;
+            color: var(--brown);
+        }
+
+        .final-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            background: var(--brown);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(62,39,35,0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-secondary:hover {
+            background: #2C1810;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--brown);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .price-card.featured {
+                transform: scale(1);
+            }
+
+            .benefits, .gallery, .reel, .included, .pricing {
+                padding: 3.5rem 1rem;
+            }
+
+            .reel-layout {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">🎨 Kzam Studio</div>
+            <ul class="nav-links">
+                <li><a href="#benefits">المزايا</a></li>
+                <li><a href="#reel">ريلز</a></li>
+                <li><a href="#pricing">الأسعار</a></li>
+                <li><a href="#contact">اتصل</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>30 تصميم جاهز للنشر <span class="highlight">شهرياً</span></h1>
+            <p>محتوى احترافي لكافيهك بدون تصميم ولا وقت مهدور</p>
+            <button class="cta-primary" onclick="scrollToSection('pricing')">ابدأ الآن</button>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">ليه هالقالب؟</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>توفير الوقت</h3>
+                    <p>نسيان الساعات الضائعة في البحث عن تصاميم. محتوى جاهز كل يوم</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>توفير الفلوس</h3>
+                    <p>بدل ما تدفع لمصمم $200 شهري، ادفع $15 وخلاص</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Consistent Content</h3>
+                    <p>منشور واحد كل يوم = زيادة engagement وفهم الخوارزمية</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>احترافي 100%</h3>
+                    <p>كل التصاميم مخطط لها لتبدو أنت احترافي من أول يوم</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✏️</div>
+                    <h3>قابل للتعديل</h3>
+                    <p>غير الألوان، الصور، النصوص بسهولة من Canva</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>نتايج أسرع</h3>
+                    <p>محتوى منتظم = followers أكتر = مبيعات أكتر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">عينة من القوالب</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">القهوة الصباح ☕</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">عرض الاثنين 🎯</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">رأي عميل ⭐</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">+ 27 تصميم آخر</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reel Section -->
+    <section class="reel" id="reel">
+        <div class="container">
+            <h2 class="section-title">بوستر ثابت تحوّل إلى ريلز</h2>
+            <p class="reel-lead">نموذج من شغلنا: تصميم واحد لكافيه، خرج منه ريلز مدته 10 ثوانٍ.</p>
+            <div class="reel-layout">
+                <div class="reel-frame">
+                    <video controls playsinline muted loop preload="metadata" poster="media/good-coffee-reel.jpg">
+                        <source src="media/good-coffee-reel.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="reel-text">
+                    <h3>إيش اللي تشوفه في الفيديو</h3>
+                    <ul>
+                        <li>الكاميرا تبدأ من الفنجان والبخار يتحرك</li>
+                        <li>بعدها ينكشف التصميم كاملاً بنصه العربي</li>
+                        <li>مقاس 9:16 جاهز لإنستغرام وتيك توك</li>
+                    </ul>
+                    <a class="cta-primary" href="https://wa.me/33777897299?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B1%D9%8A%D9%84%D8%B2%20%D9%84%D9%83%D8%A7%D9%81%D9%8A%D9%87%D9%8A" target="_blank" rel="noopener">اطلب ريلز لكافيهك</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included">
+        <div class="container">
+            <h2 class="section-title">إيش اللي داخل؟</h2>
+            <div class="included-list">
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>30 تصميم شهري</h4>
+                        <p>واحد لكل يوم تقريباً</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>نصوص جاهزة عربي</h4>
+                        <p>محترفة بدون AI slop</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>صور عالية الجودة</h4>
+                        <p>كل تصميم فيه صورة احترافية</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Branding Kit</h4>
+                        <p>ألوان + خطوط لعلامتك التجارية</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>متنوع التصاميم</h4>
+                        <p>عروض + قصص + تقييمات + أخبار</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Canva Access</h4>
+                        <p>عدّل أي تصميم في ثواني</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">الأسعار</h2>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>One Month</h3>
+                    <div class="price">$15<small>/شهر</small></div>
+                    <p class="price-description">جرب الخدمة شهر كامل</p>
+                    <ul>
+                        <li>✓ 30 تصميم</li>
+                        <li>✓ Canva Access</li>
+                        <li>✓ Branding Kit</li>
+                        <li>✓ Support</li>
+                    </ul>
+                    <a href="https://www.paypal.com/ncp/payment/DJ287FDM4XYYL" target="_blank" rel="noopener" class="cta-primary" style="display:block;text-align:center;text-decoration:none;">اطلب الآن</a>
+                </div>
+                <div class="price-card featured">
+                    <div class="badge">الأشهر الثلاث</div>
+                    <h3>Quarterly</h3>
+                    <div class="price">$35<small>/3 شهور</small></div>
+                    <p class="price-description">اقتصاد: وفّر $10</p>
+                    <ul>
+                        <li>✓ 90 تصميم</li>
+                        <li>✓ Canva Access</li>
+                        <li>✓ Branding Kit</li>
+                        <li>✓ Priority Support</li>
+                    </ul>
+                    <a href="https://www.paypal.com/ncp/payment/FSMUK8MVT52G2" target="_blank" rel="noopener" class="cta-primary" style="display:block;text-align:center;text-decoration:none;">اطلب الآن</a>
+                </div>
+                <div class="price-card">
+                    <h3>Yearly</h3>
+                    <div class="price">$120<small>/سنة</small></div>
+                    <p class="price-description">اقتصاد: وفّر $60</p>
+                    <ul>
+                        <li>✓ 360 تصميم</li>
+                        <li>✓ Canva Access</li>
+                        <li>✓ Branding Kit</li>
+                        <li>✓ VIP Support</li>
+                    </ul>
+                    <a href="https://www.paypal.com/ncp/payment/W42DNMWT6SSNN" target="_blank" rel="noopener" class="cta-primary" style="display:block;text-align:center;text-decoration:none;">اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>ابدأ محتواك الاحترافي اليوم</h2>
+            <p>30 تصميم شهري + Canva Access + Support</p>
+            <button class="cta-secondary" onclick="scrollToSection('pricing')">اختار Plan وابدأ</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Kzam Studio. جميع الحقوق محفوظة.</p>
+        <p>
+            <a href="https://wa.me/33777897299" target="_blank" rel="noopener">واتساب: 33777897299+</a> |
+            <a href="mailto:kzaaaaaa85@gmail.com">kzaaaaaa85@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
