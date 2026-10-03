@@ -270,14 +270,26 @@
         .reel-layout {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
             justify-content: center;
             margin-top: 2.5rem;
         }
 
+        .reel-item {
+            width: min(280px, 100%);
+            flex-shrink: 0;
+        }
+
+        .reel-item figcaption {
+            text-align: center;
+            color: var(--gold);
+            font-weight: bold;
+            margin-top: 0.75rem;
+        }
+
         .reel-frame {
-            width: min(320px, 100%);
+            width: 100%;
             aspect-ratio: 9 / 16;
             border-radius: 18px;
             overflow: hidden;
@@ -645,21 +657,32 @@
     <section class="reel" id="reel">
         <div class="container">
             <h2 class="section-title">بوستر ثابت تحوّل إلى ريلز</h2>
-            <p class="reel-lead">نموذج من شغلنا: تصميم واحد لكافيه، خرج منه ريلز مدته 10 ثوانٍ.</p>
+            <p class="reel-lead">نموذجان من شغلنا: بوستر كافيه خرج منه ريلز 10 ثوانٍ، وبوستر مطعم برجر خرج منه ريلز 13 ثانية.</p>
             <div class="reel-layout">
-                <div class="reel-frame">
-                    <video controls playsinline muted loop preload="metadata" poster="media/good-coffee-reel.jpg">
-                        <source src="media/good-coffee-reel.mp4" type="video/mp4">
-                    </video>
-                </div>
+                <figure class="reel-item">
+                    <div class="reel-frame">
+                        <video controls playsinline muted loop preload="metadata" poster="media/good-coffee-reel.jpg">
+                            <source src="media/good-coffee-reel.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <figcaption>كافيه</figcaption>
+                </figure>
+                <figure class="reel-item">
+                    <div class="reel-frame">
+                        <video controls playsinline muted loop preload="metadata" poster="media/burger-craft-reel.jpg">
+                            <source src="media/burger-craft-reel.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <figcaption>مطعم برجر</figcaption>
+                </figure>
                 <div class="reel-text">
                     <h3>إيش اللي تشوفه في الفيديو</h3>
                     <ul>
-                        <li>الكاميرا تبدأ من الفنجان والبخار يتحرك</li>
-                        <li>بعدها ينكشف التصميم كاملاً بنصه العربي</li>
+                        <li>ريلز الكافيه: الكاميرا تبدأ من الفنجان والبخار يتحرك، وبعدها ينكشف التصميم بنصه العربي</li>
+                        <li>ريلز المطعم: الكاميرا تمر على خطوات التحضير الخمس، وبعدها ينكشف البوستر كاملاً</li>
                         <li>مقاس 9:16 جاهز لإنستغرام وتيك توك</li>
                     </ul>
-                    <a class="cta-primary" href="https://wa.me/33777897299?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B1%D9%8A%D9%84%D8%B2%20%D9%84%D9%83%D8%A7%D9%81%D9%8A%D9%87%D9%8A" target="_blank" rel="noopener">اطلب ريلز لكافيهك</a>
+                    <a class="cta-primary" href="https://wa.me/33777897299?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B1%D9%8A%D9%84%D8%B2%20%D9%84%D9%85%D8%B7%D8%B9%D9%85%D9%8A%20%D8%A3%D9%88%20%D9%85%D9%82%D9%87%D8%A7%D9%8A" target="_blank" rel="noopener">اطلب ريلز لمطعمك أو مقهاك</a>
                 </div>
             </div>
         </div>
