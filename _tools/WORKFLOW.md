@@ -1,0 +1,100 @@
+# Daily post + reel for kzamstudio.com
+
+One SEO article and one reel per day for the Kzam Studio blog. The owner (Ismail) reviews every
+draft before it goes live. Nothing is published without his explicit approval.
+
+## How the site works
+
+- Repo: `kzaaaaaa85-a11y/Kzam_studio`. The live site is the `gh-pages` branch, served at
+  https://kzamstudio.com. `main` and `gh-pages` are kept identical: after every commit, push
+  `main`, then `git push origin main:gh-pages`.
+- Folders starting with `_` (`_tools`, `_content`) are in the repo but are never served by the
+  site. Drafts live there, so pushing a draft does not put it on the site.
+- Never edit `blog/`, `sitemap.xml`, or the `blog-nav` / `blog-latest` blocks in `index.html`
+  by hand. `python3 _tools/blog.py build` generates them.
+
+## Step 1: make today's draft
+
+1. `python3 _tools/blog.py status`. If 5 or more drafts are already waiting for approval, do not
+   write a new one: list the waiting drafts in your final message and stop.
+2. `python3 _tools/blog.py next` prints the next keyword and its angle. If it prints
+   `NO_PENDING_TOPICS`, add 10 new topics to `_content/topics.json` first (same shape, status
+   `pending`): Arabic phrases a restaurant or café owner types into Google about Instagram
+   content, captions, reels, design, offers, or photography. No duplicates of existing keywords.
+3. Search the web for the keyword and skim the top results. Note what they cover and what they
+   miss. Do not copy sentences. The article must give something those pages do not: a ready
+   example, a number, a schedule, a template.
+4. Pick a slug: lowercase English words with hyphens, max 60 chars.
+5. Write `_content/drafts/<slug>/post.json`. Use a published post in `_content/posts/` (or a
+   waiting draft in `_content/drafts/`) as the model for the shape. Fields:
+   - `slug`, `keyword` (exactly as in topics.json), `audience`
+   - `title`: 30-60 characters, contains the keyword word for word
+   - `description`: 110-160 characters, contains the keyword, says what the reader gets
+   - `h1`: contains the keyword, can be a little longer than the title
+   - `body`: list of blocks. Types: `p` (text), `h2`, `h3`, `ul`/`ol` (items), `box` (title +
+     text, for ready-to-copy examples). First block is a `p` that contains the keyword. At least
+     3 `h2`. At least 450 words, 600-800 is the target. Use the keyword once more further down.
+     `**bold**` works. One internal link near the end: `[text](/#pricing)`. Link to one or two
+     earlier posts where it fits: `[text](/blog/<slug>/)`.
+   - `reel`: `tag` (short audience label), `hook` (1-3 lines, max 26 chars each),
+     `points` (3-5 items: `title` max 34 chars, optional `sub` max 44), `cta` (1-2 lines), `url`
+   - `reel_caption`: one line shown under the video in the article
+   - `instagram`: `caption` and `hashtags` (5-12)
+6. `python3 _tools/blog.py draft <slug>` validates the draft and renders `reel.mp4`, `cover.jpg`,
+   `preview.html` and `instagram.txt` in the draft folder. Fix every error it prints and run it
+   again until it says `draft ok`.
+7. Look at `cover.jpg` (Read tool) to confirm the Arabic text is readable and nothing is cut off.
+8. Commit `_content/` and push `main`, then `git push origin main:gh-pages`.
+9. Send Ismail the draft: `reel.mp4` and `preview.html` with SendUserFile, then a short message in
+   Egyptian Arabic with: the keyword, the article title, the reel hook, the Instagram caption and
+   hashtags in a copyable block, the number of drafts waiting, and how to approve: reply
+   "انشر" to publish, or say what to change.
+
+## Step 2: when Ismail replies
+
+The workspace may have been reset since the draft was made. If the repo folder is gone, add the
+repo again (push access), clone it, and continue from the remote state.
+
+- "انشر" / approval: `git pull`, then `python3 _tools/blog.py publish <slug>`, commit everything,
+  push `main` and `main:gh-pages`. Wait about two minutes, then fetch
+  `https://kzamstudio.com/blog/<slug>/` and confirm the title is there. Give him the link.
+  "انشر الكل" publishes every waiting draft, oldest first.
+- Changes requested: edit `post.json`, run `draft <slug>` again, push, resend the files.
+- Rejected: `python3 _tools/blog.py discard <slug>`, commit, push both branches.
+
+## Writing rules (Arabic)
+
+The site sells Arabic copy that does not read as machine-written. Every article, reel and
+caption has to meet that bar. `blog.py draft` rejects the worst phrases, the rest is on you.
+
+- Dialect: simple white Arabic with a light Gulf flavor, matching the homepage ("إيش", "هذي",
+  "تصورها بجوالك"). The readers are restaurant and café owners in the Gulf and wider MENA.
+- Open with a concrete scene or number from the owner's day, never with a general statement.
+  No "في عالم اليوم", no "هل تعاني من", no "ليس مجرد X بل Y", no stacked rhetorical questions.
+- A person is the subject ("تصوّر"، "تكتب"), not the product ("يوفر لك").
+- Specifics instead of adjectives: a time, a price, a count, a dish name.
+- Short sentences, varied rhythm. No em dashes, no "!!". At most 2 emojis in the Instagram
+  caption, none in the article.
+- Only state facts you can stand behind. No invented statistics, no fake client results, no
+  invented testimonials. Example captions use plain placeholder dishes and prices in riyals.
+- One calm call to action at the end.
+
+## The reel hook comes first
+
+Ismail's priority is the hook. The first frame of the reel is the hook text, on screen from
+frame 0. Write three candidate hooks, pick the strongest, and check it against these:
+
+- ✅ Readable in under two seconds: 7 words or fewer across the lines
+- ✅ Names a moment from the owner's own day, or a number
+- ✅ Opens a question that the points of the reel answer
+- ✅ Says nothing the article does not back up
+
+The last hook line renders in gold, so put the punch there. The end card closes the loop and
+sends the viewer to the article ("الرابط في البايو").
+
+## Never
+
+- Never publish or run `publish` without Ismail's approval in the conversation.
+- Never touch the landing page copy, prices, PayPal links, or `CNAME`.
+- Never push anything other than fast-forward commits. If a push is rejected, `git pull --rebase`
+  and try once more. If it still fails, stop and report.
