@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; media-src 'self'; style-src 'unsafe-inline'; script-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; media-src 'self'; style-src 'unsafe-inline'; script-src 'self'; connect-src https://cdjxsozediftsolymjro.supabase.co; base-uri 'none'; form-action 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#3E2723">
     <title>تصاميم انستقرام جاهزة للمطاعم والمقاهي | Kzam Studio</title>
@@ -464,6 +464,123 @@
             border-bottom: none;
         }
 
+        /* Lead form */
+        .lead {
+            padding: 5rem 2rem;
+            background: var(--brown);
+            color: var(--white);
+        }
+
+        .lead .section-title {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .lead-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .lead-form {
+            max-width: 520px;
+            margin: 0 auto;
+            background: var(--cream);
+            color: var(--text);
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+        }
+
+        .lead-form .field {
+            margin-bottom: 1.1rem;
+        }
+
+        .lead-form label {
+            display: block;
+            font-weight: bold;
+            color: var(--brown);
+            margin-bottom: 0.35rem;
+        }
+
+        .lead-form label span {
+            font-weight: normal;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .lead-form input,
+        .lead-form select {
+            width: 100%;
+            min-height: 48px;
+            padding: 0.6rem 0.9rem;
+            font: inherit;
+            font-size: 16px;
+            color: var(--text);
+            background: var(--white);
+            border: 2px solid #D9CFC0;
+            border-radius: 8px;
+        }
+
+        .lead-form input:focus,
+        .lead-form select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .lead-form input[dir="ltr"] {
+            text-align: right;
+        }
+
+        .lead-form .hp {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: 0;
+            overflow: hidden;
+            clip-path: inset(50%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .lead-form button {
+            width: 100%;
+            margin-top: 0.5rem;
+            font-family: inherit;
+        }
+
+        .lead-form button:disabled {
+            opacity: 0.6;
+            cursor: default;
+            transform: none;
+        }
+
+        .lead-status {
+            margin-top: 1rem;
+            font-weight: bold;
+            text-align: center;
+            min-height: 1.6em;
+        }
+
+        .lead-status.ok {
+            color: #1B6B3A;
+        }
+
+        .lead-status.err {
+            color: #A32020;
+        }
+
+        .lead-status a {
+            color: inherit;
+        }
+
+        .lead-privacy {
+            margin-top: 0.5rem;
+            font-size: 0.82rem;
+            color: #777;
+            text-align: center;
+        }
+
         /* Latest blog posts */
         .latest {
             padding: 5rem 2rem;
@@ -604,12 +721,16 @@
                 transform: scale(1);
             }
 
-            .benefits, .gallery, .reel, .included, .pricing, .latest {
+            .benefits, .gallery, .reel, .included, .pricing, .latest, .lead {
                 padding: 3.5rem 1rem;
             }
 
             .reel-layout {
                 gap: 2rem;
+            }
+
+            .lead-form {
+                padding: 1.5rem 1.1rem;
             }
 
             .gallery-grid {
@@ -839,6 +960,47 @@
                     <a href="https://www.paypal.com/ncp/payment/W42DNMWT6SSNN" target="_blank" rel="noopener" class="cta-primary" style="display:block;text-align:center;text-decoration:none;">اطلب الآن</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Lead form -->
+    <section class="lead" id="lead">
+        <div class="container">
+            <h2 class="section-title">اترك رقمك ونكلمك على واتساب</h2>
+            <p class="lead-intro">اكتب اسم محلك ومدينتك، ونرد عليك بالباقة المناسبة وعينة من التصاميم.</p>
+            <form class="lead-form" id="lead-form" novalidate>
+                <div class="field">
+                    <label for="lead-name">الاسم</label>
+                    <input id="lead-name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name">
+                </div>
+                <div class="field">
+                    <label for="lead-whatsapp">رقم الواتساب مع مفتاح الدولة</label>
+                    <input id="lead-whatsapp" name="whatsapp" type="tel" inputmode="tel" dir="ltr" required maxlength="20" placeholder="+966 5X XXX XXXX" autocomplete="tel">
+                </div>
+                <div class="field">
+                    <label for="lead-type">نوع النشاط</label>
+                    <select id="lead-type" name="business_type" required>
+                        <option value="restaurant">مطعم</option>
+                        <option value="cafe">مقهى أو كافيه</option>
+                        <option value="other">نشاط آخر</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="lead-business">اسم المحل <span>(اختياري)</span></label>
+                    <input id="lead-business" name="business_name" type="text" maxlength="120" autocomplete="organization">
+                </div>
+                <div class="field">
+                    <label for="lead-city">المدينة <span>(اختياري)</span></label>
+                    <input id="lead-city" name="city" type="text" maxlength="80" autocomplete="address-level2">
+                </div>
+                <div class="field hp" aria-hidden="true">
+                    <label for="lead-website">Website</label>
+                    <input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <button type="submit" class="cta-primary">أرسل</button>
+                <p class="lead-status" id="lead-status" role="status" aria-live="polite"></p>
+                <p class="lead-privacy">نستخدم بياناتك للتواصل معك بخصوص طلبك فقط. لحذفها راسلنا على واتساب.</p>
+            </form>
         </div>
     </section>
 

@@ -221,7 +221,8 @@ FOOTER = f"""<footer><p>&copy; {today()[:4]} Kzam Studio. جميع الحقوق 
 CTA = f"""<aside class="cta"><h2>30 تصميم انستقرام جاهز لمطعمك أو مقهاك كل شهر</h2>
 <p>نصوص عربية وقوالب Canva تعدّلها بنفسك. الاشتراك من 15 دولار في الشهر.</p>
 <a class="btn" href="/#pricing">شوف الباقات</a>
-<a class="btn ghost" href="{WHATSAPP}" target="_blank" rel="noopener">اسأل على واتساب</a></aside>"""
+<a class="btn ghost" href="{WHATSAPP}" target="_blank" rel="noopener">اسأل على واتساب</a>
+<a class="btn ghost" href="/#lead">اترك رقمك ونكلمك</a></aside>"""
 
 
 def head(title, description, canonical, og_type, image=None, extra='', noindex=False, preview=False):
