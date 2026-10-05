@@ -92,6 +92,21 @@ frame 0. Write three candidate hooks, pick the strongest, and check it against t
 The last hook line renders in gold, so put the punch there. The end card closes the loop and
 sends the viewer to the article ("الرابط في البايو").
 
+## Every reel goes out with a hook + SEO caption
+
+Ismail's standing rule (Oct 2026): no reel is published, on the site or on Instagram, without a
+written post attached to it. The caption is what holds the viewer's attention after the video.
+
+- ✅ Line 1 is the hook: one question, number or moment from the owner's day, matching the hook
+  on screen in the reel
+- ✅ The search keyword appears word for word once in the body and again in the hashtags
+- ✅ Real numbers only (reel length, 30 designs, price from $15), nothing invented
+- ✅ One calm call to action at the end, 5-12 hashtags, at most 2 emojis
+
+Instagram: the account `kzam_studo` is connected through Windsor (`instagram` connector,
+`create_video_post` with the public `https://kzamstudio.com/...mp4` URL). Publish there only
+after Ismail approves the caption in the conversation. Reels posted this way have no music.
+
 ## Never
 
 - Never publish or run `publish` without Ismail's approval in the conversation.
