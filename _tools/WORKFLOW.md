@@ -48,7 +48,7 @@ draft before it goes live. Nothing is published without his explicit approval.
 9. Send Ismail the draft: `reel.mp4` and `preview.html` with SendUserFile, then a short message in
    Egyptian Arabic with: the keyword, the article title, the reel hook, the Instagram caption and
    hashtags in a copyable block, the number of drafts waiting, and how to approve: reply
-   "انشر" to publish, or say what to change.
+   "انشر" to publish on the site and on Instagram, or say what to change.
 
 ## Step 2: when Ismail replies
 
@@ -58,6 +58,7 @@ repo again (push access), clone it, and continue from the remote state.
 - "انشر" / approval: `git pull`, then `python3 _tools/blog.py publish <slug>`, commit everything,
   push `main` and `main:gh-pages`. Wait about two minutes, then fetch
   `https://kzamstudio.com/blog/<slug>/` and confirm the title is there. Give him the link.
+  Then post the reel on Instagram (see "Instagram publishing" below).
   "انشر الكل" publishes every waiting draft, oldest first.
 - Changes requested: edit `post.json`, run `draft <slug>` again, push, resend the files.
 - Rejected: `python3 _tools/blog.py discard <slug>`, commit, push both branches.
@@ -103,9 +104,23 @@ written post attached to it. The caption is what holds the viewer's attention af
 - ✅ Real numbers only (reel length, 30 designs, price from $15), nothing invented
 - ✅ One calm call to action at the end, 5-12 hashtags, at most 2 emojis
 
-Instagram: the account `kzam_studo` is connected through Windsor (`instagram` connector,
-`create_video_post` with the public `https://kzamstudio.com/...mp4` URL). Publish there only
-after Ismail approves the caption in the conversation. Reels posted this way have no music.
+## Instagram publishing
+
+Since Oct 2026 Ismail wants the approved reel posted on Instagram for him, right after the
+article goes live. His "انشر" covers both the site and Instagram, because he has already seen
+the caption in the draft message. Never post on Instagram before that approval.
+
+1. Load the tools: ToolSearch `select:mcp__Windsor_ai__get_connectors,mcp__Windsor_ai__execute_action`.
+2. `get_connectors` and take the account id of `kzam_studo` under the `instagram` connector.
+3. Only after the article page is confirmed live: `execute_action` with connector `instagram`,
+   action `create_video_post`, params `video_url` = `https://kzamstudio.com/blog/<slug>/reel.mp4`,
+   `cover_url` = `https://kzamstudio.com/blog/<slug>/cover.jpg`, `share_to_feed` = true, and
+   `caption` = the full text of `instagram.txt` (caption, blank line, hashtags).
+4. Tell Ismail it is posted, and that reels posted this way carry no music.
+
+One attempt only. If the Windsor tools are missing from the session, or the action returns an
+error, do not retry and do not look for another route: tell Ismail the exact reason and send
+`reel.mp4` plus the caption in a copyable block so he can post it himself.
 
 ## Never
 
