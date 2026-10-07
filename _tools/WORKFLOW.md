@@ -1,7 +1,13 @@
 # Daily post + reel for kzamstudio.com
 
-One SEO article and one reel per day for the Kzam Studio blog. The owner (Ismail) reviews every
-draft before it goes live. Nothing is published without his explicit approval.
+One SEO article and one reel per day for the Kzam Studio blog. The owner (Ismail) is shown every
+draft before it goes live.
+
+Since 7 Oct 2026 publishing is automatic, at his request ("عايز نشر أوتوماتيك بس تعرض عليّ قبل
+النشر"): the morning run makes the draft and sends it to him, and the evening run (about 20:00
+Europe/Paris, a separate scheduled task) publishes it on the site, Instagram, LinkedIn and X
+without waiting for a reply. He stops or changes a draft by replying before the evening run.
+Nothing is published that has not been sent to him first.
 
 ## How the site works
 
@@ -47,8 +53,9 @@ draft before it goes live. Nothing is published without his explicit approval.
 8. Commit `_content/` and push `main`, then `git push origin main:gh-pages`.
 9. Send Ismail the draft: `reel.mp4` and `preview.html` with SendUserFile, then a short message in
    Egyptian Arabic with: the keyword, the article title, the reel hook, the Instagram caption and
-   hashtags in a copyable block, the number of drafts waiting, and how to approve: reply
-   "انشر" to publish on the site and on Instagram, or say what to change.
+   hashtags in a copyable block, the number of drafts waiting, and what happens next: it
+   publishes by itself tonight around 20:00 Paris time on the site and Instagram. Before then he
+   can reply with what to change, "وقف" to hold it, or "انشر" to publish right away.
 
 ## Step 2: when Ismail replies
 
@@ -60,8 +67,31 @@ repo again (push access), clone it, and continue from the remote state.
   `https://kzamstudio.com/blog/<slug>/` and confirm the title is there. Give him the link.
   Then post the reel on Instagram (see "Instagram publishing" below).
   "انشر الكل" publishes every waiting draft, oldest first.
-- Changes requested: edit `post.json`, run `draft <slug>` again, push, resend the files.
+- Changes requested: edit `post.json`, run `draft <slug>` again, push, resend the files. The
+  evening run publishes the edited version.
+- "وقف" / "استنى" / "متنشرش" (hold): create an empty file `_content/drafts/<slug>/HOLD`, commit,
+  push both branches, and confirm to him that it will not go out tonight. The evening run skips
+  any draft that has a `HOLD` file. "كمّل" or "انشر" later removes the hold: delete the file
+  (publish right away on "انشر").
 - Rejected: `python3 _tools/blog.py discard <slug>`, commit, push both branches.
+
+## Step 3: evening auto-publish
+
+Run by the evening scheduled task, with nobody in the conversation. This run is Ismail's standing
+approval for every draft that was sent to him and that he did not hold.
+
+1. `python3 _tools/blog.py status` lists the waiting drafts. Skip every draft whose folder has a
+   `HOLD` file. If nothing is left, say so in one line and stop.
+2. For each remaining draft, oldest commit first: read `_content/drafts/<slug>/instagram.txt`
+   and keep its text (the folder is deleted on publish; the same text is `instagram.caption` +
+   blank line + `instagram.hashtags` in `_content/posts/<slug>.json` afterwards). Then do the
+   "انشر" steps from Step 2: publish on the site, confirm the page is live, post the reel on
+   Instagram, schedule LinkedIn and X.
+3. If a step fails for one draft, do not retry and do not look for another route. Finish the
+   other drafts, then report what failed with the exact error.
+4. Final message in Egyptian Arabic, short: what went live with the article link, what went to
+   Instagram, the LinkedIn/X date, anything held, and anything that failed. When Instagram
+   failed, attach `blog/<slug>/reel.mp4` and put the caption in a copyable block.
 
 ## Writing rules (Arabic)
 
@@ -106,9 +136,10 @@ written post attached to it. The caption is what holds the viewer's attention af
 
 ## Instagram publishing
 
-Since Oct 2026 Ismail wants the approved reel posted on Instagram for him, right after the
-article goes live. His "انشر" covers both the site and Instagram, because he has already seen
-the caption in the draft message. Never post on Instagram before that approval.
+Since Oct 2026 Ismail wants the reel posted on Instagram for him, right after the article goes
+live. His "انشر", or the evening auto-publish run, covers both the site and Instagram, because
+he has already seen the caption in the draft message. Never post a reel on Instagram that was
+not sent to him as a draft first, and never one that is on hold.
 
 1. Load the tools: ToolSearch `select:mcp__Windsor_ai__get_connectors,mcp__Windsor_ai__execute_action`.
 2. `get_connectors` and take the account id of `kzam_studo` under the `instagram` connector.
@@ -126,8 +157,8 @@ error, do not retry and do not look for another route: tell Ismail the exact rea
 
 Since Oct 2026 every approved post also goes to Ismail's LinkedIn profile
 (linkedin.com/in/ismail-sulman-888886261) and his X account (x.com/IsmailSulman1), through
-Typefully. Both go out in one draft, at the same time. His "انشر" covers LinkedIn and X too.
-Never schedule on either before that approval.
+Typefully. Both go out in one draft, at the same time. His "انشر", or the evening auto-publish
+run, covers LinkedIn and X too. Never schedule on either before the article is live.
 
 Cadence: 3 posts a week, Monday, Wednesday and Friday at 12:00 Europe/Paris. Those are the only
 queue slots, so `next-free-slot` keeps that rhythm. If several drafts are approved at once, they
@@ -157,7 +188,8 @@ texts in copyable blocks.
 
 ## Never
 
-- Never publish or run `publish` without Ismail's approval in the conversation.
+- Never publish a draft that was not sent to Ismail first, or one with a `HOLD` file. Outside
+  the evening auto-publish run, `publish` still needs his "انشر" in the conversation.
 - Never touch the landing page copy, prices, PayPal links, or `CNAME`.
 - Never push anything other than fast-forward commits. If a push is rejected, `git pull --rebase`
   and try once more. If it still fails, stop and report.

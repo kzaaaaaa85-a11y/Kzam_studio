@@ -497,6 +497,9 @@ def status():
     print(f'topics pending: {len(pending)} of {len(topics)}')
     d = drafts_list()
     print(f'drafts waiting for approval: {len(d)}' + (': ' + ', '.join(d) if d else ''))
+    held = [x for x in d if os.path.exists(os.path.join(DRAFTS, x, 'HOLD'))]
+    if held:
+        print('on hold (skip in the evening auto-publish): ' + ', '.join(held))
     posts = published()
     print(f'published posts: {len(posts)}')
     for p in posts[:5]:
