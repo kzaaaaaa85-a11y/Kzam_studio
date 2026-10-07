@@ -122,6 +122,28 @@ One attempt only. If the Windsor tools are missing from the session, or the acti
 error, do not retry and do not look for another route: tell Ismail the exact reason and send
 `reel.mp4` plus the caption in a copyable block so he can post it himself.
 
+## LinkedIn publishing
+
+Since Oct 2026 every approved post also goes to Ismail's LinkedIn profile
+(linkedin.com/in/ismail-sulman-888886261), through Typefully. His "انشر" covers LinkedIn too.
+Never schedule on LinkedIn before that approval.
+
+1. Load the tools: ToolSearch `select:mcp__Typefully_-_Social_Media_Scheduler__create_media_upload,mcp__Typefully_-_Social_Media_Scheduler__get_media_status,mcp__Typefully_-_Social_Media_Scheduler__create_draft`.
+2. Social set id is `339213`. `create_media_upload` with `file_name` = `<slug>.mp4`, then upload
+   the reel with `curl -T blog/<slug>/reel.mp4 "<upload_url>"` (no extra headers). Check
+   `get_media_status` says `ready`.
+3. Only after the article page is confirmed live: `create_draft` with `draft_title` =
+   `LinkedIn: <slug>`, only `linkedin` enabled, the reel's `media_ids`, and `publish_at` =
+   `next-free-slot` (queue: weekdays 12:00 and 17:00, Europe/Paris).
+4. Text: the Instagram caption, with "الرابط في البايو" replaced by a line that ends in `:`
+   followed by the full article URL `https://kzamstudio.com/blog/<slug>/`, then 3-4 hashtags
+   ending with `#KzamStudio`. Same writing rules as the caption.
+5. Tell Ismail the scheduled date and the Typefully `private_url` so he can edit or cancel.
+
+The Typefully plan has a monthly publishing quota (`get_social_set_details` →
+`publishing_quota`). If `remaining` is 0, or the call fails, do not retry: tell Ismail the reason
+and send the LinkedIn text in a copyable block.
+
 ## Never
 
 - Never publish or run `publish` without Ismail's approval in the conversation.
