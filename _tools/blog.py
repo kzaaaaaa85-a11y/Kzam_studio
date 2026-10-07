@@ -10,7 +10,7 @@
     python3 _tools/blog.py selftest          check this machine can render reels
 
 Layout (folders starting with "_" are never served by GitHub Pages):
-    _content/topics.json              keyword queue
+    _content/topics.json              keyword queue; each topic has a pillar (cafe, restaurant, landing)
     _content/drafts/<slug>/post.json  a draft waiting for approval (+ reel.mp4, cover.jpg)
     _content/posts/<slug>.json        a published post
     blog/<slug>/                      generated page + its reel and cover
@@ -411,6 +411,11 @@ def build():
     print(f'built {len(posts)} post(s), sitemap has {len(urls)} url(s)')
 
 
+# One pillar per day, in this order, so the feed never shows the same subject twice in a row.
+PILLARS = ['cafe', 'restaurant', 'landing']
+REEL_THEME = {'cafe': 'coffee', 'restaurant': 'teal', 'landing': 'night'}
+
+
 def set_topic(slug_or_keyword, **fields):
     topics = read_json(TOPICS)
     for t in topics:
@@ -431,6 +436,10 @@ def draft(slug):
     if errs:
         print('\n'.join('error: ' + x for x in errs))
         sys.exit(1)
+    topics = read_json(TOPICS)
+    topic = next((t for t in topics if t['keyword'] == post['keyword']), {})
+    post['reel'].setdefault('theme', REEL_THEME.get(topic.get('pillar'), 'coffee'))
+    seq = topic.get('seq') or max([t.get('seq', 0) for t in topics] + [0]) + 1
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import make_reel
     seconds = make_reel.render(post['reel'], os.path.join(folder, 'reel.mp4'),
@@ -443,7 +452,7 @@ def draft(slug):
     ig = post['instagram']
     write_text(os.path.join(folder, 'instagram.txt'),
                ig['caption'].strip() + '\n\n' + ' '.join(ig['hashtags']) + '\n')
-    set_topic(post['keyword'], status='drafted', slug=slug)
+    set_topic(post['keyword'], status='drafted', slug=slug, seq=seq)
     words = len(body_text(post).split())
     print(f'draft ok: {slug} | {words} words | reel {seconds}s')
     print(f'files: _content/drafts/{slug}/reel.mp4, cover.jpg, preview.html, instagram.txt')
@@ -495,6 +504,8 @@ def status():
     topics = read_json(TOPICS)
     pending = [t for t in topics if t.get('status', 'pending') == 'pending']
     print(f'topics pending: {len(pending)} of {len(topics)}')
+    print('pending by pillar: ' + ', '.join(
+        f'{p} {sum(1 for t in pending if t.get("pillar") == p)}' for p in PILLARS))
     d = drafts_list()
     print(f'drafts waiting for approval: {len(d)}' + (': ' + ', '.join(d) if d else ''))
     held = [x for x in d if os.path.exists(os.path.join(DRAFTS, x, 'HOLD'))]
@@ -507,10 +518,23 @@ def status():
 
 
 def next_topic():
-    for t in read_json(TOPICS):
-        if t.get('status', 'pending') == 'pending':
-            print(json.dumps(t, ensure_ascii=False, indent=2))
-            return
+    """The next pending topic from the pillar that follows the last one written."""
+    topics = read_json(TOPICS)
+    pending = [t for t in topics if t.get('status', 'pending') == 'pending']
+    used = [t for t in topics if t.get('seq')]
+    last = max(used, key=lambda t: t['seq']).get('pillar') if used else PILLARS[-1]
+    start = (PILLARS.index(last) + 1) % len(PILLARS) if last in PILLARS else 0
+    order = PILLARS[start:] + PILLARS[:start]
+    for pillar in order:
+        for t in pending:
+            if t.get('pillar') == pillar:
+                if pillar != order[0]:
+                    print(f'NOTE: no pending topic in pillar "{order[0]}", add some to topics.json')
+                print(json.dumps(t, ensure_ascii=False, indent=2))
+                return
+    if pending:
+        print(json.dumps(pending[0], ensure_ascii=False, indent=2))
+        return
     print('NO_PENDING_TOPICS')
 
 

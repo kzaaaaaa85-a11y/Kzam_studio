@@ -9,7 +9,8 @@ spec.json:
   "hook":   ["سطر أول", "سطر ثاني"],          1-3 short lines, last one is gold
   "points": [{"title": "...", "sub": "..."}], 3-5 points, sub is optional
   "cta":    ["سطر", "سطر"],                   1-2 lines on the end card
-  "url":    "kzamstudio.com"                  optional, shown in a gold pill
+  "url":    "kzamstudio.com",                 optional, shown in a gold pill
+  "theme":  "coffee"                          optional: coffee (brown), teal, night
 }
 
 The hook is on screen from the first frame. Needs Pillow (with raqm) and ffmpeg.
@@ -23,6 +24,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FONT = os.path.join(HERE, 'fonts', 'Cairo.ttf')
 GOLD, BROWN, DARK, CREAM = (212, 175, 55), (62, 39, 35), (30, 17, 14), (245, 241, 232)
 BRIGHT = (240, 196, 72)
+# background gradient (top, bottom) per theme; gold and cream text stay the same on all three
+THEMES = {
+    'coffee': ((62, 39, 35), (30, 17, 14)),     # cafe days
+    'teal': ((13, 66, 68), (5, 26, 30)),        # restaurant days
+    'night': ((40, 44, 72), (12, 14, 26)),      # landing page days
+}
 SAFE_W = 900                       # text never goes wider than this
 
 T_HOOK, T_POINT, T_END, T_FADE = 2.6, 2.3, 2.8, 0.32
@@ -182,6 +189,8 @@ def place(frame, lay, alpha, dy):
 def render(spec, out_mp4, out_jpg):
     if not features.check('raqm'):
         sys.exit('Pillow has no raqm support: Arabic would render unshaped.')
+    global BROWN, DARK
+    BROWN, DARK = THEMES.get(spec.get('theme') or 'coffee', THEMES['coffee'])
     points = spec['points']
     if not 3 <= len(points) <= 5:
         sys.exit('points must have 3 to 5 items')

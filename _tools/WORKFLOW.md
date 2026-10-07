@@ -23,10 +23,12 @@ Nothing is published that has not been sent to him first.
 
 1. `python3 _tools/blog.py status`. If 5 or more drafts are already waiting for approval, do not
    write a new one: list the waiting drafts in your final message and stop.
-2. `python3 _tools/blog.py next` prints the next keyword and its angle. If it prints
-   `NO_PENDING_TOPICS`, add 10 new topics to `_content/topics.json` first (same shape, status
-   `pending`): Arabic phrases a restaurant or café owner types into Google about Instagram
-   content, captions, reels, design, offers, or photography. No duplicates of existing keywords.
+2. `python3 _tools/blog.py next` prints the next keyword, its angle and its pillar. It rotates
+   the three pillars by itself (see "Variety" below), so take the topic it gives; do not pick
+   another one. If `status` shows a pillar with fewer than 2 pending topics, or `next` prints a
+   `NOTE` or `NO_PENDING_TOPICS`, first add 5 new topics to that pillar in `_content/topics.json`
+   (same shape, status `pending`, with `pillar`): Arabic phrases a restaurant or café owner types
+   into Google. No duplicates of existing keywords.
 3. Search the web for the keyword and skim the top results. Note what they cover and what they
    miss. Do not copy sentences. The article must give something those pages do not: a ready
    example, a number, a schedule, a template.
@@ -40,10 +42,13 @@ Nothing is published that has not been sent to him first.
    - `body`: list of blocks. Types: `p` (text), `h2`, `h3`, `ul`/`ol` (items), `box` (title +
      text, for ready-to-copy examples). First block is a `p` that contains the keyword. At least
      3 `h2`. At least 450 words, 600-800 is the target. Use the keyword once more further down.
-     `**bold**` works. One internal link near the end: `[text](/#pricing)`. Link to one or two
-     earlier posts where it fits: `[text](/blog/<slug>/)`.
+     `**bold**` works. One internal link near the end: `[text](/#pricing)` on cafe and
+     restaurant days, `[text](/#landing)` on landing page days. Link to one or two earlier
+     posts where it fits: `[text](/blog/<slug>/)`.
+   - `shape`: the article shape you chose from the "Variety" list, in two or three English words
    - `reel`: `tag` (short audience label), `hook` (1-3 lines, max 26 chars each),
-     `points` (3-5 items: `title` max 34 chars, optional `sub` max 44), `cta` (1-2 lines), `url`
+     `points` (3-5 items: `title` max 34 chars, optional `sub` max 44), `cta` (1-2 lines), `url`.
+     Leave `theme` out: `draft` sets the reel colour from the pillar.
    - `reel_caption`: one line shown under the video in the article
    - `instagram`: `caption` and `hashtags` (5-12)
 6. `python3 _tools/blog.py draft <slug>` validates the draft and renders `reel.mp4`, `cover.jpg`,
@@ -92,6 +97,28 @@ approval for every draft that was sent to him and that he did not hold.
 4. Final message in Egyptian Arabic, short: what went live with the article link, what went to
    Instagram, the LinkedIn/X date, anything held, and anything that failed. When Instagram
    failed, attach `blog/<slug>/reel.mp4` and put the caption in a copyable block.
+
+## Variety: three pillars, a new shape every day
+
+Ismail's rule (7 Oct 2026): the site and the Instagram account are a long-term asset, so the
+content must be varied and inventive. No two days in a row on the same subject, and not coffee
+every day.
+
+- Three pillars, one per day, in this order: `cafe` (coffee and cafés), `restaurant`,
+  `landing` (landing pages, menus, bio links, ordering and booking pages: the $99 / $179
+  service in the `#landing` section of the homepage). `blog.py next` keeps the rotation.
+- Each pillar has its own reel colour so the Instagram grid alternates: brown for cafe, teal for
+  restaurant, dark blue for landing. Gold and cream text on all three. `draft` applies it.
+- Landing page days sell nothing in the body. They teach the owner what the page needs (what
+  goes first, what the customer looks for, a worked example) and link once to `/#landing`.
+- A new shape every day. Before writing, open the last three files in `_content/posts/` (by
+  `date`) and pick an article shape and a hook type that the last two did not use. Shapes:
+  ready-to-copy templates; numbered ideas; common mistakes and the fix; a week or month
+  schedule; a before/after rewrite; step by step in N minutes; a checklist; a worked example for
+  one invented shop. Hook types: a question, a number, a moment from the owner's day. Write the
+  shape you chose in `post.json` as `shape`.
+- The reel is not a summary of the article. Build it around the single most surprising or most
+  useful thing in it, and give the points their own wording.
 
 ## Writing rules (Arabic)
 

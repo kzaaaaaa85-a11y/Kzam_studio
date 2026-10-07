@@ -4,185 +4,291 @@
     "audience": "restaurants",
     "angle": "10 أفكار تتصور بالجوال، مع مثال كابشن لكل فكرة",
     "status": "published",
-    "slug": "restaurant-instagram-post-ideas"
+    "slug": "restaurant-instagram-post-ideas",
+    "pillar": "restaurant",
+    "seq": 1
   },
   {
     "keyword": "أفكار ريلز للكافيهات",
     "audience": "cafes",
     "angle": "ريلز 10 ثواني بدون مونتاج: إيش تصور وبأي ترتيب",
     "status": "published",
-    "slug": "cafe-reels-ideas"
+    "slug": "cafe-reels-ideas",
+    "pillar": "cafe",
+    "seq": 2
   },
   {
     "keyword": "تصميم منشورات مطاعم",
     "audience": "restaurants",
     "angle": "إيش يحتاج منشور العرض عشان ينقرأ: الاسم، السعر، الوقت، وأخطاء التصميم الشائعة",
     "status": "published",
-    "slug": "restaurant-post-design"
+    "slug": "restaurant-post-design",
+    "pillar": "restaurant",
+    "seq": 3
   },
   {
     "keyword": "كابشن مطعم",
     "audience": "restaurants",
     "angle": "كابشن جاهز حسب نوع المنشور: طبق جديد، عرض، افتتاح، رأي زبون",
     "status": "published",
-    "slug": "restaurant-caption-examples"
+    "slug": "restaurant-caption-examples",
+    "pillar": "restaurant",
+    "seq": 4
   },
   {
     "keyword": "تصوير القهوة بالجوال",
     "audience": "cafes",
     "angle": "لقطة السكب، الرغوة، الكوب في اليد: 5 لقطات تتكرر",
     "status": "published",
-    "slug": "coffee-phone-photography"
+    "slug": "coffee-phone-photography",
+    "pillar": "cafe",
+    "seq": 5
   },
   {
     "keyword": "عبارات عن القهوة للانستقرام",
     "audience": "cafes",
     "angle": "عبارات قصيرة تصلح كابشن لكافيه، مقسمة حسب الموقف",
     "status": "published",
-    "slug": "coffee-phrases-instagram"
+    "slug": "coffee-phrases-instagram",
+    "pillar": "cafe",
+    "seq": 6
   },
   {
     "keyword": "قوالب كانفا للمطاعم",
     "audience": "restaurants",
     "angle": "كيف تختار قالب وتعدّل عليه الاسم والسعر في 5 دقائق",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "تسويق المطاعم على انستقرام",
     "audience": "restaurants",
     "angle": "خطة أسبوع واحد لمطعم يبدأ من الصفر",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "أفكار ستوري للكافيه",
     "audience": "cafes",
     "angle": "ستوري يومي في دقيقتين: تصويت، كواليس، عرض الساعة",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "cafe"
   },
   {
     "keyword": "بايو انستقرام مطعم",
     "audience": "restaurants",
     "angle": "أمثلة بايو جاهزة وإيش لازم يكون في أول سطر",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "قوالب كانفا للكافيهات",
     "audience": "cafes",
     "angle": "أنواع القوالب اللي يحتاجها كافيه في الشهر وكيف يوحّد ألوانه",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "cafe"
   },
   {
     "keyword": "هاشتاقات مطاعم",
     "audience": "restaurants",
     "angle": "كم هاشتاق تحط، وكيف تختار هاشتاق مدينتك وحيّك",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "أفضل وقت للنشر في انستقرام للمطاعم",
     "audience": "both",
     "angle": "اربط وقت النشر بوقت الجوع: قبل الغداء وقبل العشاء، وكيف تتأكد من إحصائيات حسابك",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "عبارات افتتاح مطعم",
     "audience": "restaurants",
     "angle": "صيغ إعلان الافتتاح: قبل بأسبوع، يوم الافتتاح، أول أسبوع",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "تصوير الأكل بالجوال",
     "audience": "both",
     "angle": "الضوء، الزاوية، الخلفية: 6 قواعد بدون معدات",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "خطة محتوى مطعم",
     "audience": "restaurants",
     "angle": "جدول 30 يوم: 4 أنواع منشورات تتكرر كل أسبوع",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "بايو انستقرام كافيه",
     "audience": "cafes",
     "angle": "أمثلة بايو لكافيه: الموقع، ساعات العمل، رابط الطلب",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "cafe"
   },
   {
     "keyword": "عبارات عروض مطاعم",
     "audience": "restaurants",
     "angle": "كيف تكتب عرض واضح: السعر قبل وبعد، المدة، الشرط",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "أفكار ستوري للمطاعم",
     "audience": "restaurants",
     "angle": "ستوري يبيع: طبق اليوم، كم باقي، حجز الطاولات",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "هاشتاقات قهوة",
     "audience": "cafes",
     "angle": "هاشتاقات عامة ومحلية للكافيه وكيف تخلطها",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "cafe"
   },
   {
     "keyword": "زيادة متابعين مطعم على انستقرام",
     "audience": "restaurants",
     "angle": "متابعين من نفس الحي: الموقع الجغرافي، التعاون مع حسابات المدينة، الطاولة نفسها",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "أفكار عروض للكافيهات",
     "audience": "cafes",
     "angle": "عروض ما تكسر السعر: الكوب الثاني، ساعة هادئة، بطاقة الولاء",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "cafe"
   },
   {
     "keyword": "عبارات تسويقية للمطاعم",
     "audience": "restaurants",
     "angle": "جمل قصيرة للبنرات والمنشورات، وليش الجملة المحددة تبيع أكثر",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "خطة محتوى كافيه",
     "audience": "cafes",
     "angle": "جدول شهر لكافيه بموظف واحد يصور",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "cafe"
   },
   {
     "keyword": "عبارات افتتاح كافيه",
     "audience": "cafes",
     "angle": "صيغ جاهزة لإعلان افتتاح كافيه على انستقرام وواتساب",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "cafe"
   },
   {
     "keyword": "الرد على تقييم سلبي مطعم",
     "audience": "restaurants",
     "angle": "صيغ رد على التقييم السلبي في قوقل وانستقرام بدون جدال",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "عبارات تسويقية للقهوة",
     "audience": "cafes",
     "angle": "جمل قصيرة للكوب والبنر والمنشور",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "cafe"
   },
   {
     "keyword": "أفكار محتوى مطعم برجر",
     "audience": "restaurants",
     "angle": "لقطات البرجر اللي توقف التمرير: الجبن، القطع، البخار",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "مسابقات انستقرام للمطاعم",
     "audience": "restaurants",
     "angle": "مسابقة تجيب زبائن من الحي لا متابعين من دولة ثانية",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
   },
   {
     "keyword": "منيو مطعم على انستقرام",
     "audience": "restaurants",
     "angle": "كيف تعرض المنيو في الهايلايت وفي منشور مثبت",
-    "status": "pending"
+    "status": "pending",
+    "pillar": "restaurant"
+  },
+  {
+    "keyword": "صفحة هبوط لمطعم",
+    "audience": "restaurants",
+    "angle": "إيش لازم يكون في الصفحة وبأي ترتيب: المنيو، الموقع، زر الطلب",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "رابط البايو في انستقرام للمطاعم",
+    "audience": "restaurants",
+    "angle": "رابط واحد يودّي على المنيو والموقع والواتساب بدل ثلاثة روابط",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "منيو إلكتروني للكافيهات",
+    "audience": "cafes",
+    "angle": "منيو يفتح على الجوال برابط أو باركود: إيش تكتب وكيف ترتب الأصناف",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "موقع إلكتروني لمطعم",
+    "audience": "restaurants",
+    "angle": "متى تكفيك صفحة واحدة ومتى تحتاج موقع كامل",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "صفحة هبوط لكافيه",
+    "audience": "cafes",
+    "angle": "مثال مكتوب قسم بقسم لكافيه صغير، من العنوان لزر الواتساب",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "رابط واتساب للطلب من المطعم",
+    "audience": "restaurants",
+    "angle": "رابط واتساب برسالة جاهزة، ووين تحطه في البايو والصفحة والمنيو",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "باركود منيو مطعم",
+    "audience": "restaurants",
+    "angle": "وين تحط الباركود وإيش يفتح: ملف PDF ولا صفحة تفتح على الجوال",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "حجز طاولة مطعم أونلاين",
+    "audience": "restaurants",
+    "angle": "نموذج حجز من 4 خانات يوصلك على واتساب",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "كتابة وصف مطعم",
+    "audience": "both",
+    "angle": "وصف المحل في 3 أسطر للصفحة ولقوقل: إيش تقدم، وين، ومتى",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "إضافة مطعم في قوقل ماب",
+    "audience": "both",
+    "angle": "ملف المحل في قوقل: الساعات، الصور، ورابط صفحتك",
+    "status": "pending",
+    "pillar": "landing"
   }
 ]
