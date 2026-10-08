@@ -57,8 +57,10 @@
     "keyword": "قوالب كانفا للمطاعم",
     "audience": "restaurants",
     "angle": "كيف تختار قالب وتعدّل عليه الاسم والسعر في 5 دقائق",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "canva-templates-for-restaurants",
+    "seq": 7
   },
   {
     "keyword": "تسويق المطاعم على انستقرام",
