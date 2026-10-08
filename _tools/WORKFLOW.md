@@ -213,6 +213,23 @@ The Typefully plan has a monthly publishing quota of 10 (`get_social_set_details
 fails, do not retry: tell Ismail the reason, when the quota resets, and send the LinkedIn and X
 texts in copyable blocks.
 
+## Demo landing page
+
+`demo/hatab-w-hail/` is a sample restaurant landing page, live at
+https://kzamstudio.com/demo/hatab-w-hail/ (Ismail asked for it on 8 Oct 2026). The restaurant
+"حطب وهيل" is invented and the page says so. It is `noindex`, it is not in the sitemap, and
+`blog.py build` does not touch it. Its order buttons open the studio's WhatsApp with a message
+asking for a page like it.
+
+- A topic in `_content/topics.json` with a `demo` field: the article links to that path once in
+  the body, as the worked example the reader can open on a phone, e.g.
+  `[افتح النموذج على جوالك](/demo/hatab-w-hail/)`. This is in addition to the `/#landing` link.
+- Other landing page days may link to it the same way when the article describes something the
+  page shows (hours first, menu with prices, offer block, location, WhatsApp order message).
+- Say plainly that it is a demo. Never call it a client, and never quote results from it.
+- The photos are AI-generated in Canva, upscaled from previews. Replace them in
+  `demo/hatab-w-hail/img/` (same file names) if Ismail sends the full-size files.
+
 ## Never
 
 - Never publish a draft that was not sent to Ismail first, or one with a `HOLD` file. Outside

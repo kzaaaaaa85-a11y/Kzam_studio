@@ -228,7 +228,8 @@
     "audience": "restaurants",
     "angle": "إيش لازم يكون في الصفحة وبأي ترتيب: المنيو، الموقع، زر الطلب",
     "status": "pending",
-    "pillar": "landing"
+    "pillar": "landing",
+    "demo": "/demo/hatab-w-hail/"
   },
   {
     "keyword": "رابط البايو في انستقرام للمطاعم",

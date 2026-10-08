@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#1C2F23">
+<title>حطب وهيل | نموذج صفحة هبوط لمطعم من Kzam Studio</title>
+<meta name="description" content="نموذج تجريبي لصفحة هبوط مطعم: ساعات العمل، المنيو بالأسعار، عرض الغداء، الموقع، وزر طلب واتساب يكتب الطلب والإجمالي.">
+<link rel="canonical" href="https://kzamstudio.com/demo/hatab-w-hail/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kzam Studio">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:title" content="حطب وهيل | نموذج صفحة هبوط لمطعم">
+<meta property="og:description" content="نموذج تجريبي من Kzam Studio: منيو بالأسعار، عرض الغداء، الموقع، وزر طلب واتساب.">
+<meta property="og:url" content="https://kzamstudio.com/demo/hatab-w-hail/">
+<meta property="og:image" content="https://kzamstudio.com/demo/hatab-w-hail/img/hero.jpg">
+<link rel="preload" href="fonts/aref-ruqaa-arabic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/readex-pro-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'Aref Ruqaa'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/aref-ruqaa-arabic-700-normal.woff2) format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC; }
+@font-face { font-family: 'Aref Ruqaa'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/aref-ruqaa-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Readex Pro'; font-style: normal; font-weight: 160 700; font-display: swap; src: url(fonts/readex-pro-arabic-wght-normal.woff2) format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC; }
+@font-face { font-family: 'Readex Pro'; font-style: normal; font-weight: 160 700; font-display: swap; src: url(fonts/readex-pro-latin-wght-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* Layout: one column of full-width bands, 1120px content, mobile first. */
+:root {
+  --ground: #1C2F23;
+  --deep: #142219;
+  --surface: #26402F;
+  --line: #35523F;
+  --text: #F4EFE1;
+  --soft: #D9DFD2;
+  --muted: #BAC7B6;
+  --accent: #F2B531;
+  --accent-hi: #FFD066;
+  --ink: #1A2A1F;
+  --wood: #3A2416;
+  --display: 'Aref Ruqaa', 'Amiri', 'Traditional Arabic', serif;
+  --body: 'Readex Pro', 'Segoe UI', Tahoma, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.7;
+  padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  overflow-x: clip;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3, p { margin: 0; }
+a { color: var(--accent); }
+a:hover { color: var(--accent-hi); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+button { font: inherit; cursor: pointer; }
+.wrap { max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+.display { font-family: var(--display); font-weight: 700; }
+.num { font-variant-numeric: tabular-nums; }
+
+.demo-strip { background: var(--deep); color: var(--muted); font-size: 13px; text-align: center; padding: 8px 20px; }
+.demo-strip a { font-weight: 500; white-space: nowrap; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; }
+.brand { text-decoration: none; display: flex; flex-direction: column; }
+.brand b { font-family: var(--display); font-size: 34px; line-height: 1.2; color: var(--accent); }
+.brand span { font-size: 13px; color: var(--muted); }
+.nav { display: none; gap: 28px; font-size: 15px; }
+.nav a { color: var(--text); text-decoration: none; padding-block: 10px; border-bottom: 2px solid transparent; }
+.nav a:hover { border-bottom-color: var(--accent); }
+.menu-link { min-height: 44px; padding: 6px 22px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 20px; border: 0; border-radius: 999px; background: var(--accent); color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none; white-space: nowrap; transition: background-color .15s ease, transform .15s ease; }
+.btn:hover { background: var(--accent-hi); color: var(--ink); }
+.btn:active { transform: scale(.97); }
+.btn.big { min-height: 54px; padding: 12px 30px; font-size: 18px; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.btn.ghost:hover { background: var(--accent); color: var(--ink); }
+.btn.dark { background: var(--ink); color: var(--text); }
+.btn.dark:hover { background: #0F1A13; color: var(--text); }
+
+.hero { display: grid; gap: 44px; padding-block: 20px 64px; align-items: center; }
+.hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; min-width: 0; }
+.open-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; color: var(--soft); }
+.open-pill i { width: 8px; height: 8px; border-radius: 50%; background: #7BD88F; box-shadow: 0 0 0 4px rgba(123, 216, 143, .18); }
+.hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(46px, 13vw, 88px); line-height: 1.2; text-wrap: balance; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { max-width: 31em; font-size: 18px; color: var(--soft); }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.link-down { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--text); text-underline-offset: 6px; }
+.arch { position: relative; width: min(100%, 440px); margin-inline: auto; }
+.arch::before { content: ""; position: absolute; inset: -12px 12px 12px -12px; border: 1.5px solid var(--accent); border-radius: 999px 999px 34px 34px; opacity: .55; }
+.arch img { position: relative; width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; object-position: 72% 50%; border-radius: 999px 999px 28px 28px; border: 6px solid var(--surface); }
+.tag { position: absolute; bottom: 24px; right: -8px; padding: 10px 18px; background: var(--text); color: var(--ink); border-radius: 16px; box-shadow: 0 10px 24px rgba(0, 0, 0, .35); display: flex; flex-direction: column; }
+.tag span { font-size: 13px; line-height: 1.5; }
+.tag b { font-size: 20px; line-height: 1.4; font-weight: 600; }
+
+.facts { border-block: 1px solid var(--line); }
+.facts .wrap { display: grid; gap: 20px 40px; padding-block: 26px; }
+.fact { display: flex; align-items: flex-start; gap: 14px; }
+.fact svg { flex-shrink: 0; margin-top: 4px; color: var(--accent); }
+.fact b { display: block; font-weight: 600; }
+.fact span { font-size: 14px; color: var(--muted); }
+
+.offer { padding-block: 64px 24px; }
+.offer-card { background: var(--accent); color: var(--ink); border-radius: 32px; padding: 34px clamp(22px, 4vw, 52px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px 48px; position: relative; overflow: hidden; }
+.offer-card::after { content: ""; position: absolute; left: -70px; top: -70px; width: 230px; height: 230px; border-radius: 50%; border: 34px solid rgba(26, 42, 31, .07); pointer-events: none; }
+.offer-copy { flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.offer-copy small { font-size: 14px; font-weight: 600; }
+.offer-copy h2 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 4.2vw, 50px); line-height: 1.3; text-wrap: balance; }
+.offer-copy p { font-size: 17px; }
+.offer-price { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; position: relative; z-index: 1; }
+.offer-price .row { display: flex; align-items: baseline; gap: 10px; }
+.offer-price .big-num { font-family: var(--display); font-weight: 700; font-size: 92px; line-height: 1; }
+.offer-price .unit { font-size: 20px; font-weight: 600; }
+.offer-price s { font-size: 15px; }
+
+.menu { padding-block: 56px 40px; }
+.menu h2, .how h2, .place h2 { font-family: var(--display); font-weight: 700; line-height: 1.3; }
+.menu h2 { font-size: clamp(42px, 5vw, 60px); }
+.menu .note { color: var(--muted); margin-top: 4px; }
+.plates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 84px 14px; padding-top: 92px; }
+.plate { background: var(--surface); border-radius: 24px; padding: 0 12px 14px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; min-width: 0; }
+.plate-photo { width: 78%; max-width: 190px; aspect-ratio: 1 / 1; margin-top: -64px; border-radius: 50%; overflow: hidden; border: 5px solid var(--ground); background: var(--wood); flex-shrink: 0; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.plate-photo img { width: 100%; height: 100%; object-fit: cover; }
+.plate:hover .plate-photo { transform: rotate(10deg) scale(1.04); }
+.plate h3 { margin-top: 8px; font-size: 19px; font-weight: 600; line-height: 1.4; }
+.plate p { flex: 1 1 auto; font-size: 14px; color: var(--muted); }
+.price { font-weight: 600; font-size: 19px; color: var(--accent); white-space: nowrap; }
+.plate .qty { width: 100%; }
+
+.sides-title { margin-top: 64px; margin-bottom: 8px; font-family: var(--display); font-weight: 700; font-size: 32px; line-height: 1.3; }
+.sides { display: grid; gap: 0 56px; }
+.side { display: flex; align-items: center; gap: 12px; padding-block: 14px; border-bottom: 1px dashed var(--line); min-width: 0; }
+.side-copy { flex: 1 1 auto; min-width: 0; }
+.side-copy b { display: block; font-weight: 500; font-size: 17px; }
+.side-copy span { font-size: 14px; color: var(--muted); }
+.side .price { font-size: 16px; }
+
+.qty { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; }
+.qty .add { width: 100%; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 6px 14px; border: 1.5px solid var(--accent); border-radius: 999px; background: transparent; color: var(--accent); font-weight: 600; font-size: 15px; transition: background-color .15s ease, color .15s ease; }
+.qty .add:hover { background: var(--accent); color: var(--ink); }
+.side .qty .add { width: 44px; padding: 0; border-radius: 50%; }
+.qty .step { width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: var(--accent); color: var(--ink); }
+.qty .step:hover { background: var(--accent-hi); }
+.qty .step.minus { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.qty .count { min-width: 30px; text-align: center; font-weight: 600; font-size: 17px; }
+.offer-price .qty .add { width: auto; border: 0; background: var(--ink); color: var(--text); padding: 10px 26px; min-height: 48px; font-size: 16px; }
+.offer-price .qty .add:hover { background: #0F1A13; color: var(--text); }
+.offer-price .qty .step { background: var(--ink); color: var(--text); }
+.offer-price .qty .step.minus { background: transparent; color: var(--ink); border-color: var(--ink); }
+
+.how { padding-block: 40px; }
+.how h2, .place h2 { font-size: clamp(34px, 4.2vw, 48px); margin-bottom: 20px; }
+.steps { display: grid; gap: 24px 40px; padding: 0; margin: 0; list-style: none; }
+.steps li { display: flex; align-items: flex-start; gap: 16px; }
+.steps .n { flex-shrink: 0; font-family: var(--display); font-weight: 700; font-size: 56px; line-height: 1; color: var(--accent); }
+.steps b { display: block; font-weight: 600; font-size: 18px; }
+.steps span { font-size: 15px; color: var(--muted); }
+
+.place { padding-block: 40px 72px; }
+.place-grid { display: grid; gap: 20px; }
+.card { background: var(--surface); border-radius: 24px; padding: 26px; min-width: 0; }
+.addr { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.addr-row { display: flex; align-items: flex-start; gap: 12px; }
+.addr-row svg { flex-shrink: 0; margin-top: 4px; color: var(--accent); }
+.addr-row b { display: block; font-weight: 600; font-size: 18px; }
+.addr-row span { font-size: 15px; color: var(--muted); }
+.hours { display: flex; flex-direction: column; }
+.hours div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; padding-block: 10px; border-bottom: 1px dashed var(--line); }
+.hours div:last-child { border-bottom: 0; }
+.hours b { font-weight: 600; }
+
+.foot { border-top: 1px solid var(--line); }
+.foot .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding-block: 32px 40px; }
+.foot .brand b { font-size: 28px; }
+.foot p { flex: 0 1 520px; min-width: 0; font-size: 15px; color: var(--soft); }
+.foot p a { font-weight: 600; text-underline-offset: 5px; white-space: nowrap; }
+
+.bar { position: fixed; inset-inline: 0; bottom: 0; z-index: 10; background: var(--deep); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 8px 14px; padding-block: 10px; }
+.bar-text { flex: 1 1 auto; min-width: 0; font-size: 14px; line-height: 1.5; }
+.bar-text b { display: block; font-weight: 600; font-size: 17px; color: var(--accent); white-space: nowrap; }
+.bar-text.has { white-space: nowrap; }
+@media (max-width: 359px) { .bar .btn { padding-inline: 14px; } .clear { padding-inline: 6px; } }
+.bar-actions { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.clear { min-height: 44px; padding: 8px 10px; border: 0; background: transparent; color: var(--muted); font-size: 14px; text-decoration: underline; text-underline-offset: 5px; }
+.clear:hover { color: var(--text); }
+.bar.bump .btn { animation: bump .28s ease; }
+@keyframes bump { 50% { transform: scale(1.07); } }
+
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero-copy > * { animation: rise .6s cubic-bezier(.2, .7, .2, 1) both; }
+.hero-copy > *:nth-child(2) { animation-delay: .06s; }
+.hero-copy > *:nth-child(3) { animation-delay: .12s; }
+.hero-copy > *:nth-child(4) { animation-delay: .18s; }
+.arch { animation: rise .8s .1s cubic-bezier(.2, .7, .2, 1) both; }
+
+@media (min-width: 560px) {
+  .plates { gap: 88px 20px; }
+  .plate { padding: 0 16px 18px; }
+  .plate h3 { font-size: 20px; }
+}
+@media (min-width: 720px) {
+  .nav { display: flex; }
+  .menu-link { display: none; }
+  .facts .wrap { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sides { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .place-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bar-text { font-size: 15px; }
+}
+@media (min-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); padding-block: 36px 80px; }
+  .hero h1 { font-size: clamp(64px, 6.6vw, 88px); }
+  .arch img { aspect-ratio: 1 / 1; object-position: 66% 50%; }
+  .plates { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="demo-strip">نموذج تجريبي من Kzam Studio. المطعم والأسعار للعرض، وأزرار الطلب تفتح واتساب الاستوديو. <a href="/#landing">اطلب صفحة لمطعمك</a></div>
+
+<header class="wrap top">
+  <a class="brand" href="#top" aria-label="حطب وهيل، أعلى الصفحة"><b>حطب وهيل</b><span>مندي على الحطب · الرياض</span></a>
+  <nav class="nav" aria-label="أقسام الصفحة">
+    <a href="#menu">المنيو</a>
+    <a href="#offer">عرض الغداء</a>
+    <a href="#location">الموقع</a>
+  </nav>
+  <a class="btn ghost menu-link" href="#menu">المنيو</a>
+</header>
+
+<main id="top">
+
+<section class="wrap hero">
+  <div class="hero-copy">
+    <div class="open-pill"><i></i>مفتوح اليوم من 12 الظهر حتى 1 الليل</div>
+    <h1>4 ساعات في <em>تنور الحطب</em></h1>
+    <p>نشعل حطب السمر 8 الصبح، وننزّل أول دفعة مندي 12:30. اطلب واتساب واستلم من الفرع بعد 20 دقيقة، أو يوصلك داخل شمال الرياض خلال 45 دقيقة.</p>
+    <div class="hero-actions">
+      <a class="btn big" data-wa href="https://wa.me/33777897299" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+        اطلب واتساب
+      </a>
+      <a class="link-down" href="#menu">شوف المنيو
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="arch">
+    <img src="img/hero.jpg" width="800" height="532" alt="صينية مندي دجاج على رز بسمتي مع دقوس وسلطة">
+    <div class="tag"><span>مندي دجاج، نص دجاجة</span><b class="num">32 ريال</b></div>
+  </div>
+</section>
+
+<section class="facts" aria-label="الاستلام والتوصيل والدفع">
+  <div class="wrap">
+    <div class="fact">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <div><b>استلام من الفرع</b><span>جاهز بعد 20 دقيقة من تأكيد الطلب</span></div>
+    </div>
+    <div class="fact">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>
+      <div><b>توصيل خلال 45 دقيقة</b><span>داخل شمال الرياض، رسوم التوصيل 9 ريال</span></div>
+    </div>
+    <div class="fact">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>
+      <div><b>الدفع</b><span>مدى، Apple Pay، أو كاش عند الاستلام</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap offer" id="offer">
+  <div class="offer-card">
+    <div class="offer-copy">
+      <small>عرض الغداء</small>
+      <h2>مندي دجاج + سمبوسة + لبن</h2>
+      <p>من الأحد إلى الخميس، من 12 الظهر حتى 4 العصر. في الفرع والتوصيل.</p>
+    </div>
+    <div class="offer-price">
+      <div class="row"><span class="big-num num">39</span><span class="unit">ريال</span><s>بدل 50</s></div>
+      <div class="qty" data-id="offer" data-label="أضف العرض للطلب"></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap menu" id="menu">
+  <h2>المنيو</h2>
+  <p class="note">الأسعار بالريال وتشمل الضريبة.</p>
+
+  <div class="plates">
+    <article class="plate">
+      <div class="plate-photo"><img src="img/lamb.jpg" width="800" height="800" loading="lazy" alt="مندي لحم على رز بالزبيب واللوز" style="transform: scale(1.06)"></div>
+      <h3>مندي لحم</h3>
+      <p>كتف حري 400 جرام مع زبيب ولوز</p>
+      <div class="price num">68 ريال</div>
+      <div class="qty" data-id="lamb" data-label="أضف"></div>
+    </article>
+    <article class="plate">
+      <div class="plate-photo"><img src="img/madhbi.jpg" width="800" height="800" loading="lazy" alt="مظبي دجاج مشوي على الحجر فوق رز أبيض" style="transform: scale(1.08)"></div>
+      <h3>مظبي دجاج</h3>
+      <p>دجاجة كاملة على الحجر، تكفي 2</p>
+      <div class="price num">58 ريال</div>
+      <div class="qty" data-id="madhbi" data-label="أضف"></div>
+    </article>
+    <article class="plate">
+      <div class="plate-photo"><img src="img/sambosa.jpg" width="800" height="800" loading="lazy" alt="سمبوسة لحم مقلية مع دقوس حار" style="transform: translate(15.4%, -3.5%) scale(1.4)"></div>
+      <h3>سمبوسة لحم</h3>
+      <p>6 حبات مع دقوس حار</p>
+      <div class="price num">14 ريال</div>
+      <div class="qty" data-id="sambosa" data-label="أضف"></div>
+    </article>
+    <article class="plate">
+      <div class="plate-photo"><img src="img/kunafa.jpg" width="800" height="800" loading="lazy" alt="صينية كنافة بالفستق مع دلة قهوة سعودية" style="transform: translate(20%, -8.4%) scale(1.4)"></div>
+      <h3>كنافة بالقشطة</h3>
+      <p>صينية تكفي 2، تطلع حارة من الفرن</p>
+      <div class="price num">24 ريال</div>
+      <div class="qty" data-id="kunafa" data-label="أضف"></div>
+    </article>
+  </div>
+
+  <h3 class="sides-title">جانبيات ومشروبات</h3>
+  <div class="sides">
+    <div class="side"><div class="side-copy"><b>مندي دجاج، نص دجاجة</b><span>على رز بسمتي، مع سلطة ودقوس</span></div><div class="price num">32 ريال</div><div class="qty" data-id="mandi" data-name="مندي دجاج"></div></div>
+    <div class="side"><div class="side-copy"><b>شوربة عدس</b><span>بالليمون والكمون، 300 مل</span></div><div class="price num">9 ريال</div><div class="qty" data-id="shorba" data-name="شوربة عدس"></div></div>
+    <div class="side"><div class="side-copy"><b>سلطة حارة</b><span>طماطم وفلفل أخضر مهروس</span></div><div class="price num">7 ريال</div><div class="qty" data-id="salata" data-name="سلطة حارة"></div></div>
+    <div class="side"><div class="side-copy"><b>لبن</b><span>كوب 250 مل</span></div><div class="price num">4 ريال</div><div class="qty" data-id="laban" data-name="لبن"></div></div>
+    <div class="side"><div class="side-copy"><b>شاي عدني</b><span>بالحليب والهيل، براد يكفي 3</span></div><div class="price num">12 ريال</div><div class="qty" data-id="shai" data-name="شاي عدني"></div></div>
+    <div class="side"><div class="side-copy"><b>قهوة سعودية</b><span>دلة صغيرة مع تمر</span></div><div class="price num">10 ريال</div><div class="qty" data-id="gahwa" data-name="قهوة سعودية"></div></div>
+  </div>
+</section>
+
+<section class="wrap how">
+  <h2>كيف تطلب</h2>
+  <ol class="steps">
+    <li><span class="n num" aria-hidden="true">1</span><div><b>اختر أطباقك</b><span>اضغط «أضف» على كل طبق في المنيو. الإجمالي يظهر أسفل الشاشة.</span></div></li>
+    <li><span class="n num" aria-hidden="true">2</span><div><b>أرسل الطلب واتساب</b><span>الرسالة تنكتب لحالها بالأطباق والإجمالي. أنت تضغط إرسال فقط.</span></div></li>
+    <li><span class="n num" aria-hidden="true">3</span><div><b>نأكد ونجهز</b><span>نرد عليك خلال 5 دقائق بوقت الاستلام أو التوصيل.</span></div></li>
+  </ol>
+</section>
+
+<section class="wrap place" id="location">
+  <h2>الموقع وساعات العمل</h2>
+  <div class="place-grid">
+    <div class="card addr">
+      <div class="addr-row">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><b>حي الياسمين، طريق أنس بن مالك، الرياض</b><span>مواقف أمام الفرع، وقسم العوائل في الدور الأول.</span></div>
+      </div>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=%D8%AD%D9%8A+%D8%A7%D9%84%D9%8A%D8%A7%D8%B3%D9%85%D9%8A%D9%86+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6" target="_blank" rel="noopener">افتح الموقع في خرائط قوقل</a>
+    </div>
+    <div class="card hours">
+      <div><span>السبت إلى الخميس</span><b class="num">12 الظهر حتى 1 الليل</b></div>
+      <div><span>الجمعة</span><b class="num">1 الظهر حتى 1 الليل</b></div>
+      <div><span>عرض الغداء</span><b class="num">الأحد إلى الخميس، 12 حتى 4 العصر</b></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="brand"><b>حطب وهيل</b><span>مطعم غير حقيقي، صُمم لعرض شكل الصفحة.</span></div>
+    <p>هذه الصفحة من تصميم Kzam Studio. صفحة مثلها لمطعمك بـ 99 دولاراً تدفعها مرة واحدة، وتستلمها خلال 3 أيام من وصول صورك ومعلومات محلك. <a href="/#landing">اطلب صفحتك</a></p>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <div class="bar-text" id="bar-text" aria-live="polite">اختر أطباقك من المنيو، والإجمالي يظهر هنا.</div>
+    <div class="bar-actions">
+      <button type="button" class="clear" id="clear" hidden>امسح</button>
+      <a class="btn" id="bar-cta" data-wa href="https://wa.me/33777897299" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+        <span id="bar-cta-text">اطلب واتساب</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
