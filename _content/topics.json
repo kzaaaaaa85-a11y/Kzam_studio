@@ -227,9 +227,11 @@
     "keyword": "صفحة هبوط لمطعم",
     "audience": "restaurants",
     "angle": "إيش لازم يكون في الصفحة وبأي ترتيب: المنيو، الموقع، زر الطلب",
-    "status": "pending",
+    "status": "drafted",
     "pillar": "landing",
-    "demo": "/demo/hatab-w-hail/"
+    "demo": "/demo/hatab-w-hail/",
+    "slug": "restaurant-landing-page",
+    "seq": 8
   },
   {
     "keyword": "رابط البايو في انستقرام للمطاعم",
