@@ -228,7 +228,8 @@ CTA = f"""<aside class="cta"><h2>30 تصميم انستقرام جاهز لمط�
 def head(title, description, canonical, og_type, image=None, extra='', noindex=False, preview=False):
     img_src = "'self' data:" if preview else "'self'"
     robots = '<meta name="robots" content="noindex, nofollow">\n' if noindex else ''
-    og_img = f'<meta property="og:image" content="{e(image)}">\n' if image else ''
+    og_img = (f'<meta property="og:image" content="{e(image)}">\n'
+              '<meta name="twitter:card" content="summary_large_image">\n') if image else ''
     return f"""<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
