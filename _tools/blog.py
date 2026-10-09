@@ -216,7 +216,7 @@ HEADER = """<header><div class="nav"><a class="logo" href="/">🎨 Kzam Studio</
 </ul></div></header>"""
 
 FOOTER = f"""<footer><p>&copy; {today()[:4]} Kzam Studio. جميع الحقوق محفوظة.</p>
-<p><a href="{WHATSAPP}" target="_blank" rel="noopener">واتساب: 33777897299+</a> | <a href="mailto:kzaaaaaa85@gmail.com">kzaaaaaa85@gmail.com</a></p></footer>"""
+<p><a href="{WHATSAPP}" target="_blank" rel="noopener">واتساب: 33777897299+</a> | <a href="mailto:kzaaaaaa85@gmail.com">kzaaaaaa85@gmail.com</a> | <a href="https://www.instagram.com/kzam_studo/" target="_blank" rel="noopener">انستقرام: kzam_studo@</a></p></footer>"""
 
 CTA = f"""<aside class="cta"><h2>30 تصميم انستقرام جاهز لمطعمك أو مقهاك كل شهر</h2>
 <p>نصوص عربية وقوالب Canva تعدّلها بنفسك. الاشتراك من 15 دولار في الشهر.</p>
