@@ -73,8 +73,10 @@
     "keyword": "أفكار ستوري للكافيه",
     "audience": "cafes",
     "angle": "ستوري يومي في دقيقتين: تصويت، كواليس، عرض الساعة",
-    "status": "pending",
-    "pillar": "cafe"
+    "status": "drafted",
+    "pillar": "cafe",
+    "slug": "cafe-instagram-story-ideas",
+    "seq": 9
   },
   {
     "keyword": "بايو انستقرام مطعم",
