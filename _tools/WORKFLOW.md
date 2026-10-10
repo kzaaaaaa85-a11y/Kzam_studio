@@ -230,6 +230,23 @@ asking for a page like it.
 - The photos are AI-generated in Canva, upscaled from previews. Replace them in
   `demo/hatab-w-hail/img/` (same file names) if Ismail sends the full-size files.
 
+## Pinterest
+
+The agency profile is https://www.pinterest.com/kzamstudio/ (Ismail's old account, converted on
+10 Oct 2026). Board: "أفكار محتوى انستقرام للمطاعم والكافيهات", one pin per published post, each
+pin linking to its article. This is a backlink source, so the pin link is always the article URL.
+
+- `python3 _tools/make_pins.py` writes `media/pinterest/<slug>.jpg` (1000x1500) for every
+  published post, from the post title and the first reel points. Commit and push like any change.
+- Posting a pin needs a browser session logged in to Pinterest (Claude in Chrome on Ismail's
+  laptop). The daily scheduled tasks cannot do it. When Ismail asks for the Pinterest pins, add
+  one pin for each post that is not on the board yet: image `media/pinterest/<slug>.jpg`, title =
+  post title, description = post description, link = `https://kzamstudio.com/blog/<slug>/`.
+- Pinterest blocks `fetch` to other sites, and the upload tool rejects local paths. What works in
+  the pin creation tool: load the hosted image in an `<img crossOrigin="anonymous">`, draw it on a
+  canvas, `toBlob`, wrap in a `File`, put it on `#storyboard-upload-input` through a
+  `DataTransfer`, then dispatch `input` and `change`.
+
 ## Never
 
 - Never publish a draft that was not sent to Ismail first, or one with a `HOLD` file. Outside
