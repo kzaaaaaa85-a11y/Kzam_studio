@@ -10,7 +10,9 @@ spec.json:
   "points": [{"title": "...", "sub": "..."}], 3-5 points, sub is optional
   "cta":    ["سطر", "سطر"],                   1-2 lines on the end card
   "url":    "kzamstudio.com",                 optional, shown in a gold pill
-  "theme":  "coffee"                          optional: coffee (brown), teal, night
+  "theme":  "coffee",                         optional: coffee (brown), teal, night
+  "sample": {"image": "media/samples/x.jpg",  optional: a work sample shown as a card right
+             "label": "نموذج", "caption": "..."}   after the hook (path relative to the repo)
 }
 
 The hook is on screen from the first frame. Needs Pillow (with raqm) and ffmpeg.
@@ -33,6 +35,7 @@ THEMES = {
 SAFE_W = 900                       # text never goes wider than this
 
 T_HOOK, T_POINT, T_END, T_FADE = 2.6, 2.3, 2.8, 0.32
+T_SAMPLE = 3.2
 
 
 def font(size, weight):
@@ -144,6 +147,41 @@ def point_layer(i, point):
     return im
 
 
+def sample_layer(sample):
+    """A work sample as a tilted card with a label above and a caption below."""
+    im, d = layer()
+    if sample.get('label'):
+        f = font(50, 800)
+        tw = width(sample['label'], f) + 90
+        d.rounded_rectangle([W / 2 - tw / 2, 262, W / 2 + tw / 2, 358], 48, fill=GOLD + (255,))
+        d.text((W / 2, 306), sample['label'], font=f, fill=DARK + (255,), anchor='mm',
+               direction='rtl', language='ar')
+    path = sample['image']
+    if not os.path.isabs(path):
+        path = os.path.join(os.path.dirname(HERE), path)
+    pic = Image.open(path).convert('RGB')
+    cw = 640
+    pic = pic.resize((cw, round(pic.height * cw / pic.width)), Image.LANCZOS)
+    border = 14
+    card = Image.new('RGBA', (pic.width + border * 2, pic.height + border * 2), CREAM + (255,))
+    card.paste(pic, (border, border))
+    card = card.rotate(2.5, resample=Image.BICUBIC, expand=True)
+    cx, cy = W // 2, 950
+    shadow = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    blob = Image.new('RGBA', card.size, (0, 0, 0, 150))
+    shadow.paste(blob, (cx - card.width // 2 + 10, cy - card.height // 2 + 26), card)
+    im.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(26)))
+    im.alpha_composite(card, (cx - card.width // 2, cy - card.height // 2))
+    d = ImageDraw.Draw(im)
+    if sample.get('caption'):
+        f, lines = fit(sample['caption'], 700, SAFE_W, 54, 2, 40)
+        y = cy + card.height // 2 + 90
+        for line in lines:
+            draw_text(d, (W / 2, y), line, f, CREAM)
+            y += int(f.size * 1.5)
+    return im
+
+
 def end_layer(spec):
     im, d = layer()
     y = 790
@@ -195,7 +233,10 @@ def render(spec, out_mp4, out_jpg):
     if not 3 <= len(points) <= 5:
         sys.exit('points must have 3 to 5 items')
     hook, underline = hook_layer(spec)
-    scenes = [(hook, T_HOOK)] + [(point_layer(i, p), T_POINT) for i, p in enumerate(points)]
+    scenes = [(hook, T_HOOK)]
+    if spec.get('sample'):
+        scenes.append((sample_layer(spec['sample']), T_SAMPLE))
+    scenes += [(point_layer(i, p), T_POINT) for i, p in enumerate(points)]
     scenes.append((end_layer(spec), T_END))
     starts, t = [], 0.0
     for _, dur in scenes:
