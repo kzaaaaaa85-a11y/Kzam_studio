@@ -66,8 +66,10 @@
     "keyword": "تسويق المطاعم على انستقرام",
     "audience": "restaurants",
     "angle": "خطة أسبوع واحد لمطعم يبدأ من الصفر",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-instagram-marketing",
+    "seq": 10
   },
   {
     "keyword": "أفكار ستوري للكافيه",
