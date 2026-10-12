@@ -139,12 +139,27 @@
     html { scroll-behavior: auto; }
     button.go { transition: none; }
   }
+
+  /* photo hero */
+  .sky { background: var(--midnight); }
+  .photo { position: absolute; inset: 0; height: 760px; background: url(images/hero.jpg) center right / cover no-repeat; }
+  .photo::after { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(14,23,51,.96) 0%, rgba(14,23,51,.85) 38%, rgba(14,23,51,.25) 70%, rgba(14,23,51,.1) 100%),
+                linear-gradient(180deg, rgba(14,23,51,0) 60%, var(--midnight) 100%); }
+  .hero { grid-template-columns: minmax(0, 560px); min-height: 680px; }
+  .stars { display: none; }
+  @media (max-width: 860px) {
+    .photo { height: 520px; background-position: 82% 60%; }
+    .photo::after { background: linear-gradient(180deg, rgba(14,23,51,.35) 0%, rgba(14,23,51,.75) 55%, var(--midnight) 100%); }
+    .hero { min-height: 0; padding-top: 180px; }
+  }
 </style>
 </head>
 <body>
 
 <main>
 <div class="sky">
+<div class="photo" role="img" aria-label="A woman asleep in a dark bedroom lit by a low bedside lamp"></div>
 <div class="stars" aria-hidden="true" id="stars"></div>
 
 <header class="top">
@@ -171,16 +186,7 @@
         </div>
       </div>
 
-      <div class="clock-wrap" aria-hidden="true">
-        <div class="clock">
-          <div class="face">
-            <span class="digit">3</span><span class="colon">:</span><span class="digit">07</span>
-            <span class="ampm">AM</span>
-          </div>
-        </div>
-        <div class="clock-caption">Two hours awake, doing the math on how much sleep is left.</div>
-      </div>
-    </section>
+      </section>
   </div>
 
   <section class="night">
