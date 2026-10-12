@@ -194,7 +194,11 @@ wait their turn in the queue; never add slots or pick custom times to post faste
 1. Load the tools: ToolSearch `select:mcp__Typefully_-_Social_Media_Scheduler__create_media_upload,mcp__Typefully_-_Social_Media_Scheduler__get_media_status,mcp__Typefully_-_Social_Media_Scheduler__create_draft`.
 2. Social set id is `339213`. `create_media_upload` with `file_name` = `<slug>.mp4`, then upload
    the reel with `curl -T blog/<slug>/reel.mp4 "<upload_url>"` (no extra headers). Check
-   `get_media_status` says `ready`.
+   `get_media_status` says `ready`. If the upload fails (the session's network may block
+   typefully-user-uploads.s3.amazonaws.com, seen 12 Oct 2026), do not retry and do not skip the
+   post: create the draft without `media_ids`, as text only (the article link shows a preview
+   card), and tell Ismail the reel was not attached. Ismail confirmed on 12 Oct 2026 that he wants
+   LinkedIn and X scheduled every time.
 3. Only after the article page is confirmed live: one `create_draft` with `draft_title` =
    `LinkedIn + X: <slug>`, `linkedin` and `x` enabled, and `publish_at` = `next-free-slot`.
 4. LinkedIn text: the Instagram caption, with "الرابط في البايو" replaced by a line that ends in
