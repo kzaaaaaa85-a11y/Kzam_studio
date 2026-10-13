@@ -25,3 +25,11 @@ this folder off the agency site.
   ability was refused even after Ismail enabled all write abilities; retry in a new session.
   Then enable "Enforce HTTPS" in the repo's Pages settings.
 - TODO Kit account (Ismail creates it), then replace KIT_FORM_ID in index.html.
+
+## Status 13 Oct 2026
+- DNS done and live (http://thesleepfixes.com works). GitHub is issuing the HTTPS certificate;
+  once issued, tick "Enforce HTTPS" in repo Settings > Pages.
+- Full-size hero (1680x944) pushed to the live repo (exported via a scratch Canva copy
+  DAHX6DJHll0 "thesleepfixes hero export (scratch)", can be deleted).
+- Kit account was closed by Kit right after sign-up (no reason given). Support emailed
+  13 Oct from kzaaaaaa85@gmail.com to help@kit.com. Fallback: Systeme.io free plan.
