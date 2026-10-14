@@ -84,8 +84,10 @@
     "keyword": "بايو انستقرام مطعم",
     "audience": "restaurants",
     "angle": "أمثلة بايو جاهزة وإيش لازم يكون في أول سطر",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-instagram-bio-examples",
+    "seq": 13
   },
   {
     "keyword": "قوالب كانفا للكافيهات",
