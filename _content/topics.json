@@ -254,8 +254,10 @@
     "keyword": "منيو إلكتروني للكافيهات",
     "audience": "cafes",
     "angle": "منيو يفتح على الجوال برابط أو باركود: إيش تكتب وكيف ترتب الأصناف",
-    "status": "pending",
-    "pillar": "landing"
+    "status": "drafted",
+    "pillar": "landing",
+    "slug": "cafe-digital-menu",
+    "seq": 14
   },
   {
     "keyword": "موقع إلكتروني لمطعم",
