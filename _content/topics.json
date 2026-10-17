@@ -311,5 +311,96 @@
     "angle": "ملف المحل في قوقل: الساعات، الصور، ورابط صفحتك",
     "status": "pending",
     "pillar": "landing"
+  },
+  {
+    "keyword": "تصاميم انستقرام لصالونات التجميل",
+    "audience": "salons",
+    "angle": "بوست قبل وبعد للتسريحة: إيش تكتب عليه وكيف ترتب الصورتين",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "أفكار منشورات للعيادات",
+    "audience": "clinics",
+    "angle": "10 أفكار منشورات لعيادة أسنان أو جلدية بدون صور مرضى",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "بايو انستقرام صالون",
+    "audience": "salons",
+    "angle": "بايو صالون في 4 سطور: الخدمة والحي والحجز",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "كابشن عيادة تجميل",
+    "audience": "clinics",
+    "angle": "كابشنات تشرح الإجراء بلغة بسيطة وتطمّن المراجع",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "ستوري الصالونات",
+    "audience": "salons",
+    "angle": "أسبوع ستوري لصالون: تصويت وسؤال وعرض",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "حجز موعد العيادة من انستقرام",
+    "audience": "clinics",
+    "angle": "رابط البايو وزر واتساب: كيف يحجز المراجع بضغطة",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "عروض الصالون على انستقرام",
+    "audience": "salons",
+    "angle": "تصميم عرض موسمي يقرؤه الزبون في ثانيتين",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "محتوى العيادات في رمضان",
+    "audience": "clinics",
+    "angle": "جدول 30 يوم لعيادة: نصائح ومواعيد ومعايدة",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "قبل وبعد منشور مطعم",
+    "audience": "restaurants",
+    "angle": "نفس الطبق: بوست ضعيف ثم نسخة معدلة، وإيش تغير سطر سطر",
+    "pillar": "before_after",
+    "status": "pending"
+  },
+  {
+    "keyword": "قبل وبعد بايو كافيه",
+    "audience": "cafes",
+    "angle": "3 بايوهات كافيهات قبل وبعد التعديل",
+    "pillar": "before_after",
+    "status": "pending"
+  },
+  {
+    "keyword": "قبل وبعد منشور صالون",
+    "audience": "salons",
+    "angle": "تصميم عرض صالون قبل وبعد: الخط والألوان والسعر",
+    "pillar": "before_after",
+    "status": "pending"
+  },
+  {
+    "keyword": "قبل وبعد كابشن عيادة",
+    "audience": "clinics",
+    "angle": "كابشن طبي معقد يتحول لسطرين يفهمهم المراجع",
+    "pillar": "before_after",
+    "status": "pending"
+  },
+  {
+    "keyword": "قبل وبعد شبكة انستقرام",
+    "audience": "restaurants",
+    "angle": "شبكة 9 منشورات ملخبطة ثم مرتبة بقالبين ولونين",
+    "pillar": "before_after",
+    "status": "pending"
   }
 ]

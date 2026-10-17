@@ -10,7 +10,7 @@ spec.json:
   "points": [{"title": "...", "sub": "..."}], 3-5 points, sub is optional
   "cta":    ["سطر", "سطر"],                   1-2 lines on the end card
   "url":    "kzamstudio.com",                 optional, shown in a gold pill
-  "theme":  "coffee",                         optional: coffee (brown), teal, night
+  "theme":  "coffee",                         optional: coffee (brown), teal, night, plum, olive
   "sample": {"image": "media/samples/x.jpg",  optional: a work sample shown as a card right
              "label": "نموذج", "caption": "..."}   after the hook (path relative to the repo)
 }
@@ -31,6 +31,8 @@ THEMES = {
     'coffee': ((62, 39, 35), (30, 17, 14)),     # cafe days
     'teal': ((13, 66, 68), (5, 26, 30)),        # restaurant days
     'night': ((40, 44, 72), (12, 14, 26)),      # landing page days
+    'plum': ((74, 32, 58), (28, 10, 24)),       # salon & clinic days
+    'olive': ((52, 58, 30), (18, 22, 10)),      # before/after days
 }
 SAFE_W = 900                       # text never goes wider than this
 

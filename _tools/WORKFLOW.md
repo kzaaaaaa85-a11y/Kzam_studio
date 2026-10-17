@@ -42,8 +42,8 @@ Nothing is published that has not been sent to him first.
    - `body`: list of blocks. Types: `p` (text), `h2`, `h3`, `ul`/`ol` (items), `box` (title +
      text, for ready-to-copy examples). First block is a `p` that contains the keyword. At least
      3 `h2`. At least 450 words, 600-800 is the target. Use the keyword once more further down.
-     `**bold**` works. One internal link near the end: `[text](/#pricing)` on cafe and
-     restaurant days, `[text](/#landing)` on landing page days. Link to one or two earlier
+     `**bold**` works. One internal link near the end: `[text](/#pricing)` on cafe,
+     restaurant, beauty and before/after days, `[text](/#landing)` on landing page days. Link to one or two earlier
      posts where it fits: `[text](/blog/<slug>/)`.
    - `shape`: the article shape you chose from the "Variety" list, in two or three English words
    - `reel`: `tag` (short audience label), `hook` (1-3 lines, max 26 chars each),
@@ -98,17 +98,28 @@ approval for every draft that was sent to him and that he did not hold.
    Instagram, the LinkedIn/X date, anything held, and anything that failed. When Instagram
    failed, attach `blog/<slug>/reel.mp4` and put the caption in a copyable block.
 
-## Variety: three pillars, a new shape every day
+## Variety: a weekly rotation, a new shape every day
 
 Ismail's rule (7 Oct 2026): the site and the Instagram account are a long-term asset, so the
 content must be varied and inventive. No two days in a row on the same subject, and not coffee
 every day.
 
-- Three pillars, one per day, in this order: `cafe` (coffee and cafés), `restaurant`,
-  `landing` (landing pages, menus, bio links, ordering and booking pages: the $99 / $179
-  service in the `#landing` section of the homepage). `blog.py next` keeps the rotation.
-- Each pillar has its own reel colour so the Instagram grid alternates: brown for cafe, teal for
-  restaurant, dark blue for landing. Gold and cream text on all three. `draft` applies it.
+Updated 17 Oct 2026: the Instagram bio now names restaurants, cafés, salons and clinics. Every
+activity in the bio gets posts, and nothing outside the bio gets posted (no CV, no posters).
+
+- A seven-day rotation: `beauty`, `cafe`, `landing`, `beauty`, `restaurant`, `before_after`,
+  `restaurant`, then it starts again. That is 3 food days, 2 salon and clinic days, 1 landing
+  page day and 1 before/after day per week. `blog.py next` keeps the rotation and prints the slot.
+- `beauty` days speak to salon and clinic owners (alternate between the two). Clinic posts never
+  show patients, never promise medical results, and stay on marketing (posts, captions, bio,
+  booking), not medical advice.
+- `before_after` days take one weak post, bio or caption from any activity in the bio (an invented
+  shop), show it, then the rewritten version, and say what changed line by line.
+- Each pillar has its own reel colour so the grid alternates: brown for cafe, teal for
+  restaurant, dark blue for landing, plum for beauty, olive for before/after. Gold and cream text
+  on all of them. `draft` applies it.
+- If `next` prints a NOTE that a pillar has no pending topic, add 5 or more topics for it to
+  `_content/topics.json` before drafting.
 - Landing page days sell nothing in the body. They teach the owner what the page needs (what
   goes first, what the customer looks for, a worked example) and link once to `/#landing`.
 - A new shape every day. Before writing, open the last three files in `_content/posts/` (by
@@ -169,7 +180,8 @@ he has already seen the caption in the draft message. Never post a reel on Insta
 not sent to him as a draft first, and never one that is on hold.
 
 1. Load the tools: ToolSearch `select:mcp__Windsor_ai__get_connectors,mcp__Windsor_ai__execute_action`.
-2. `get_connectors` and take the account id of `kzam_studo` under the `instagram` connector.
+2. `get_connectors` and take the account id of the Kzam Studio account under the `instagram` connector. Its username
+   changed from `kzam_studo` to `kzam.studio` on 17 Oct 2026; the connector may show either name.
 3. Only after the article page is confirmed live: `execute_action` with connector `instagram`,
    action `create_video_post`, params `video_url` = `https://kzamstudio.com/blog/<slug>/reel.mp4`,
    `cover_url` = `https://kzamstudio.com/blog/<slug>/cover.jpg`, `share_to_feed` = true, and

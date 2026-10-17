@@ -10,7 +10,7 @@
     python3 _tools/blog.py selftest          check this machine can render reels
 
 Layout (folders starting with "_" are never served by GitHub Pages):
-    _content/topics.json              keyword queue; each topic has a pillar (cafe, restaurant, landing)
+    _content/topics.json              keyword queue; each topic has a pillar (cafe, restaurant, beauty, landing, before_after)
     _content/drafts/<slug>/post.json  a draft waiting for approval (+ reel.mp4, cover.jpg)
     _content/posts/<slug>.json        a published post
     blog/<slug>/                      generated page + its reel and cover
@@ -412,9 +412,13 @@ def build():
     print(f'built {len(posts)} post(s), sitemap has {len(urls)} url(s)')
 
 
-# One pillar per day, in this order, so the feed never shows the same subject twice in a row.
-PILLARS = ['cafe', 'restaurant', 'landing']
-REEL_THEME = {'cafe': 'coffee', 'restaurant': 'teal', 'landing': 'night'}
+# Weekly rotation (Ismail, 17 Oct 2026): 3 food days (restaurant/cafe), 2 salon & clinic days,
+# 1 landing page day, 1 before/after day. Seven slots, then it starts again. No subject twice in a row.
+ROTATION = ['beauty', 'cafe', 'landing', 'beauty', 'restaurant', 'before_after', 'restaurant']
+ROTATION_START_SEQ = 17            # first topic written under this rotation
+PILLARS = ['cafe', 'restaurant', 'beauty', 'landing', 'before_after']
+REEL_THEME = {'cafe': 'coffee', 'restaurant': 'teal', 'landing': 'night',
+              'beauty': 'plum', 'before_after': 'olive'}
 
 
 def set_topic(slug_or_keyword, **fields):
@@ -522,10 +526,12 @@ def next_topic():
     """The next pending topic from the pillar that follows the last one written."""
     topics = read_json(TOPICS)
     pending = [t for t in topics if t.get('status', 'pending') == 'pending']
-    used = [t for t in topics if t.get('seq')]
-    last = max(used, key=lambda t: t['seq']).get('pillar') if used else PILLARS[-1]
-    start = (PILLARS.index(last) + 1) % len(PILLARS) if last in PILLARS else 0
-    order = PILLARS[start:] + PILLARS[:start]
+    used = [t for t in topics if t.get('seq', 0) >= ROTATION_START_SEQ]
+    slot = len(used) % len(ROTATION)
+    first = ROTATION[slot]
+    order = [first] + [p for p in ROTATION[slot + 1:] + ROTATION[:slot] if p != first]
+    order = list(dict.fromkeys(order))
+    print(f'rotation slot {slot + 1}/{len(ROTATION)}: {first}')
     for pillar in order:
         for t in pending:
             if t.get('pillar') == pillar:
