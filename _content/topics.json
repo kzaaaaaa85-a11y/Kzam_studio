@@ -102,8 +102,10 @@
     "keyword": "هاشتاقات مطاعم",
     "audience": "restaurants",
     "angle": "كم هاشتاق تحط، وكيف تختار هاشتاق مدينتك وحيّك",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-hashtags",
+    "seq": 16
   },
   {
     "keyword": "أفضل وقت للنشر في انستقرام للمطاعم",
