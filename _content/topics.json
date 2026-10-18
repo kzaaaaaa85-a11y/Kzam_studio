@@ -317,7 +317,9 @@
     "audience": "salons",
     "angle": "بوست قبل وبعد للتسريحة: إيش تكتب عليه وكيف ترتب الصورتين",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "salon-before-after-instagram-post",
+    "seq": 17
   },
   {
     "keyword": "أفكار منشورات للعيادات",
