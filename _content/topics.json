@@ -162,8 +162,10 @@
     "keyword": "هاشتاقات قهوة",
     "audience": "cafes",
     "angle": "هاشتاقات عامة ومحلية للكافيه وكيف تخلطها",
-    "status": "pending",
-    "pillar": "cafe"
+    "status": "drafted",
+    "pillar": "cafe",
+    "slug": "cafe-coffee-hashtags",
+    "seq": 18
   },
   {
     "keyword": "زيادة متابعين مطعم على انستقرام",
