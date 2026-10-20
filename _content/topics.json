@@ -269,8 +269,10 @@
     "keyword": "موقع إلكتروني لمطعم",
     "audience": "restaurants",
     "angle": "متى تكفيك صفحة واحدة ومتى تحتاج موقع كامل",
-    "status": "pending",
-    "pillar": "landing"
+    "status": "drafted",
+    "pillar": "landing",
+    "slug": "restaurant-website-or-one-page",
+    "seq": 19
   },
   {
     "keyword": "صفحة هبوط لكافيه",
