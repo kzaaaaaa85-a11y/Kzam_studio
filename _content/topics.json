@@ -330,7 +330,9 @@
     "audience": "clinics",
     "angle": "10 أفكار منشورات لعيادة أسنان أو جلدية بدون صور مرضى",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "clinic-instagram-post-ideas",
+    "seq": 20
   },
   {
     "keyword": "بايو انستقرام صالون",
