@@ -383,7 +383,9 @@
     "audience": "restaurants",
     "angle": "نفس الطبق: بوست ضعيف ثم نسخة معدلة، وإيش تغير سطر سطر",
     "pillar": "before_after",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "restaurant-post-before-after",
+    "seq": 22
   },
   {
     "keyword": "قبل وبعد بايو كافيه",
