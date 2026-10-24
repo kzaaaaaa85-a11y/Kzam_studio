@@ -120,8 +120,10 @@
     "keyword": "عبارات افتتاح مطعم",
     "audience": "restaurants",
     "angle": "صيغ إعلان الافتتاح: قبل بأسبوع، يوم الافتتاح، أول أسبوع",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-opening-phrases",
+    "seq": 23
   },
   {
     "keyword": "تصوير الأكل بالجوال",
