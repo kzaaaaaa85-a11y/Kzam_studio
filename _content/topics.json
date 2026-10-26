@@ -120,7 +120,7 @@
     "keyword": "عبارات افتتاح مطعم",
     "audience": "restaurants",
     "angle": "صيغ إعلان الافتتاح: قبل بأسبوع، يوم الافتتاح، أول أسبوع",
-    "status": "drafted",
+    "status": "published",
     "pillar": "restaurant",
     "slug": "restaurant-opening-phrases",
     "seq": 23
@@ -343,7 +343,7 @@
     "audience": "salons",
     "angle": "بايو صالون في 4 سطور: الخدمة والحي والحجز",
     "pillar": "beauty",
-    "status": "drafted",
+    "status": "published",
     "slug": "salon-instagram-bio",
     "seq": 24
   },
