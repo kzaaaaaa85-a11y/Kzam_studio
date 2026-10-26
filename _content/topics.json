@@ -343,7 +343,9 @@
     "audience": "salons",
     "angle": "بايو صالون في 4 سطور: الخدمة والحي والحجز",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "salon-instagram-bio",
+    "seq": 24
   },
   {
     "keyword": "كابشن عيادة تجميل",
