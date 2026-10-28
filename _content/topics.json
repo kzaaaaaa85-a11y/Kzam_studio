@@ -284,8 +284,10 @@
     "keyword": "صفحة هبوط لكافيه",
     "audience": "cafes",
     "angle": "مثال مكتوب قسم بقسم لكافيه صغير، من العنوان لزر الواتساب",
-    "status": "pending",
-    "pillar": "landing"
+    "status": "drafted",
+    "pillar": "landing",
+    "slug": "cafe-landing-page",
+    "seq": 26
   },
   {
     "keyword": "رابط واتساب للطلب من المطعم",
