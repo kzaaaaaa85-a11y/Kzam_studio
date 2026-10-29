@@ -356,7 +356,9 @@
     "audience": "clinics",
     "angle": "كابشنات تشرح الإجراء بلغة بسيطة وتطمّن المراجع",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "beauty-clinic-caption",
+    "seq": 27
   },
   {
     "keyword": "ستوري الصالونات",
