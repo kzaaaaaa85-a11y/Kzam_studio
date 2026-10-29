@@ -284,7 +284,7 @@
     "keyword": "صفحة هبوط لكافيه",
     "audience": "cafes",
     "angle": "مثال مكتوب قسم بقسم لكافيه صغير، من العنوان لزر الواتساب",
-    "status": "drafted",
+    "status": "published",
     "pillar": "landing",
     "slug": "cafe-landing-page",
     "seq": 26
@@ -356,7 +356,7 @@
     "audience": "clinics",
     "angle": "كابشنات تشرح الإجراء بلغة بسيطة وتطمّن المراجع",
     "pillar": "beauty",
-    "status": "drafted",
+    "status": "published",
     "slug": "beauty-clinic-caption",
     "seq": 27
   },
