@@ -129,8 +129,10 @@
     "keyword": "تصوير الأكل بالجوال",
     "audience": "both",
     "angle": "الضوء، الزاوية، الخلفية: 6 قواعد بدون معدات",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-food-phone-photography",
+    "seq": 28
   },
   {
     "keyword": "خطة محتوى مطعم",
