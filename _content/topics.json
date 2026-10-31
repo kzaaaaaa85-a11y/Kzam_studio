@@ -129,7 +129,7 @@
     "keyword": "تصوير الأكل بالجوال",
     "audience": "both",
     "angle": "الضوء، الزاوية، الخلفية: 6 قواعد بدون معدات",
-    "status": "drafted",
+    "status": "published",
     "pillar": "restaurant",
     "slug": "restaurant-food-phone-photography",
     "seq": 28
@@ -404,7 +404,7 @@
     "audience": "cafes",
     "angle": "3 بايوهات كافيهات قبل وبعد التعديل",
     "pillar": "before_after",
-    "status": "drafted",
+    "status": "published",
     "slug": "cafe-bio-before-after",
     "seq": 29
   },
