@@ -404,7 +404,9 @@
     "audience": "cafes",
     "angle": "3 بايوهات كافيهات قبل وبعد التعديل",
     "pillar": "before_after",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "cafe-bio-before-after",
+    "seq": 29
   },
   {
     "keyword": "قبل وبعد منشور صالون",
