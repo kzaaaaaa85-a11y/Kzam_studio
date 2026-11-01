@@ -138,8 +138,10 @@
     "keyword": "خطة محتوى مطعم",
     "audience": "restaurants",
     "angle": "جدول 30 يوم: 4 أنواع منشورات تتكرر كل أسبوع",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-content-plan",
+    "seq": 30
   },
   {
     "keyword": "بايو انستقرام كافيه",
