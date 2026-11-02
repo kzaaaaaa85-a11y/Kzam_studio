@@ -369,7 +369,9 @@
     "audience": "salons",
     "angle": "أسبوع ستوري لصالون: تصويت وسؤال وعرض",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "salon-instagram-stories-week",
+    "seq": 31
   },
   {
     "keyword": "حجز موعد العيادة من انستقرام",
