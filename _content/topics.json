@@ -202,8 +202,10 @@
     "keyword": "خطة محتوى كافيه",
     "audience": "cafes",
     "angle": "جدول شهر لكافيه بموظف واحد يصور",
-    "status": "pending",
-    "pillar": "cafe"
+    "status": "drafted",
+    "pillar": "cafe",
+    "slug": "cafe-content-plan",
+    "seq": 32
   },
   {
     "keyword": "عبارات افتتاح كافيه",
