@@ -169,7 +169,7 @@ written post attached to it. The caption is what holds the viewer's attention af
 - ✅ Line 1 is the hook: one question, number or moment from the owner's day, matching the hook
   on screen in the reel
 - ✅ The search keyword appears word for word once in the body and again in the hashtags
-- ✅ Real numbers only (reel length, 30 designs, price from $15), nothing invented
+- ✅ Real numbers only (reel length, 30 designs, price from $49), nothing invented
 - ✅ One calm call to action at the end, 5-12 hashtags, at most 2 emojis
 
 ## Instagram publishing

@@ -219,7 +219,7 @@ FOOTER = f"""<footer><p>&copy; {today()[:4]} Kzam Studio. جميع الحقوق 
 <p><a href="{WHATSAPP}" target="_blank" rel="noopener">واتساب: 33777897299+</a> | <a href="mailto:kzaaaaaa85@gmail.com">kzaaaaaa85@gmail.com</a> | <a href="https://www.instagram.com/kzam.studio/" target="_blank" rel="noopener">انستقرام: kzam.studio@</a></p></footer>"""
 
 CTA = f"""<aside class="cta"><h2>30 تصميم انستقرام جاهز لمطعمك أو مقهاك كل شهر</h2>
-<p>نصوص عربية وقوالب Canva تعدّلها بنفسك. الاشتراك من 15 دولار في الشهر.</p>
+<p>نصوص عربية وقوالب Canva تعدّلها بنفسك. الاشتراك من 49 دولار في الشهر.</p>
 <a class="btn" href="/#pricing">شوف الباقات</a>
 <a class="btn ghost" href="{WHATSAPP}" target="_blank" rel="noopener">اسأل على واتساب</a>
 <a class="btn ghost" href="/#lead">اترك رقمك ونكلمك</a></aside>"""
