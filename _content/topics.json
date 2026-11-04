@@ -299,8 +299,10 @@
     "keyword": "رابط واتساب للطلب من المطعم",
     "audience": "restaurants",
     "angle": "رابط واتساب برسالة جاهزة، ووين تحطه في البايو والصفحة والمنيو",
-    "status": "pending",
-    "pillar": "landing"
+    "status": "drafted",
+    "pillar": "landing",
+    "slug": "restaurant-whatsapp-order-link",
+    "seq": 33
   },
   {
     "keyword": "باركود منيو مطعم",
