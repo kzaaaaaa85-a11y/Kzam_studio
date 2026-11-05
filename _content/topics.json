@@ -299,7 +299,7 @@
     "keyword": "رابط واتساب للطلب من المطعم",
     "audience": "restaurants",
     "angle": "رابط واتساب برسالة جاهزة، ووين تحطه في البايو والصفحة والمنيو",
-    "status": "drafted",
+    "status": "published",
     "pillar": "landing",
     "slug": "restaurant-whatsapp-order-link",
     "seq": 33
@@ -382,7 +382,7 @@
     "audience": "clinics",
     "angle": "رابط البايو وزر واتساب: كيف يحجز المراجع بضغطة",
     "pillar": "beauty",
-    "status": "drafted",
+    "status": "published",
     "slug": "clinic-instagram-booking-checklist",
     "seq": 34
   },
