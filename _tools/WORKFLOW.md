@@ -163,6 +163,11 @@ sends the viewer to the article ("الرابط في البايو").
 
 ## Every reel goes out with a hook + SEO caption
 
+Ismail's rule (5 Nov 2026): keep it short. The Instagram caption is at most 6 short lines
+(hook, one problem line, one fix line, keyword line, CTA) and 5-7 hashtags. The draft message
+to him is short too: keyword, title, hook, caption block, drafts waiting, and the closing line.
+No extra explanation.
+
 Ismail's standing rule (Oct 2026): no reel is published, on the site or on Instagram, without a
 written post attached to it. The caption is what holds the viewer's attention after the video.
 
