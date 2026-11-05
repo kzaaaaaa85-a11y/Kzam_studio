@@ -382,7 +382,9 @@
     "audience": "clinics",
     "angle": "رابط البايو وزر واتساب: كيف يحجز المراجع بضغطة",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "clinic-instagram-booking-checklist",
+    "seq": 34
   },
   {
     "keyword": "عروض الصالون على انستقرام",
