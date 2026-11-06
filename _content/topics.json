@@ -156,8 +156,10 @@
     "keyword": "عبارات عروض مطاعم",
     "audience": "restaurants",
     "angle": "كيف تكتب عرض واضح: السعر قبل وبعد، المدة، الشرط",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-offer-phrases",
+    "seq": 35
   },
   {
     "keyword": "أفكار ستوري للمطاعم",
