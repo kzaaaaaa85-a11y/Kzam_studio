@@ -425,7 +425,9 @@
     "audience": "salons",
     "angle": "تصميم عرض صالون قبل وبعد: الخط والألوان والسعر",
     "pillar": "before_after",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "salon-offer-post-before-after",
+    "seq": 36
   },
   {
     "keyword": "قبل وبعد كابشن عيادة",
