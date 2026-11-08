@@ -165,8 +165,10 @@
     "keyword": "أفكار ستوري للمطاعم",
     "audience": "restaurants",
     "angle": "ستوري يبيع: طبق اليوم، كم باقي، حجز الطاولات",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-instagram-story-ideas",
+    "seq": 37
   },
   {
     "keyword": "هاشتاقات قهوة",
