@@ -165,7 +165,7 @@
     "keyword": "أفكار ستوري للمطاعم",
     "audience": "restaurants",
     "angle": "ستوري يبيع: طبق اليوم، كم باقي، حجز الطاولات",
-    "status": "drafted",
+    "status": "published",
     "pillar": "restaurant",
     "slug": "restaurant-instagram-story-ideas",
     "seq": 37
@@ -427,7 +427,7 @@
     "audience": "salons",
     "angle": "تصميم عرض صالون قبل وبعد: الخط والألوان والسعر",
     "pillar": "before_after",
-    "status": "drafted",
+    "status": "published",
     "slug": "salon-offer-post-before-after",
     "seq": 36
   },
