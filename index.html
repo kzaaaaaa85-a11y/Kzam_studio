@@ -681,6 +681,36 @@
         }
 
         /* Latest blog posts */
+        /* FAQ */
+        .faq {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-list details {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.1rem 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-list summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--brown);
+        }
+
+        .faq-list p {
+            margin-top: 0.8rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
         .latest {
             padding: 5rem 2rem;
             background: var(--cream);
@@ -872,6 +902,7 @@
             }
         }
     </style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "كم مدة التسليم؟", "acceptedAnswer": {"@type": "Answer", "text": "صفحة الهبوط الأساسية خلال 3 أيام، والبوستر الواحد والسيرة الذاتية خلال يومين، وسيرة وخطاب التقديم خلال 3 أيام، وثلاثة بوسترات خلال 4 أيام. المدة تبدأ من يوم ما توصلنا صورك ومعلومات محلك."}}, {"@type": "Question", "name": "هل أقدر أعدّل التصاميم بنفسي؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم. التصاميم الشهرية قوالب Canva، تغيّر فيها الألوان والصور والنصوص في دقائق."}}, {"@type": "Question", "name": "كم سعر باقة التصاميم الشهرية؟", "acceptedAnswer": {"@type": "Answer", "text": "30 تصميم في الشهر بـ $49. باقة 3 شهور بـ $129 (90 تصميم)، وباقة سنة كاملة بـ $449 (360 تصميم)."}}, {"@type": "Question", "name": "كيف أطبع البوستر؟", "acceptedAnswer": {"@type": "Answer", "text": "نسلمك ملف PDF بدقة 300 dpi مع هوامش القص، بمقاس A4 أو A3. تعطيه لأي مطبعة قريبة منك ويطبع بدون تعديل."}}, {"@type": "Question", "name": "كيف أطلب؟", "acceptedAnswer": {"@type": "Answer", "text": "اضغط زر «اطلب على واتساب» تحت الباقة اللي تبيها، أو اترك رقمك في النموذج ونرد عليك."}}]}</script>
 </head>
 <body>
     <!-- Header -->
@@ -1289,6 +1320,21 @@
             </form>
         </div>
     </section>
+
+    <!-- faq:start -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">أسئلة شائعة</h2>
+            <div class="faq-list">
+                <details><summary>كم مدة التسليم؟</summary><p>صفحة الهبوط الأساسية خلال 3 أيام، والبوستر الواحد والسيرة الذاتية خلال يومين، وسيرة وخطاب التقديم خلال 3 أيام، وثلاثة بوسترات خلال 4 أيام. المدة تبدأ من يوم ما توصلنا صورك ومعلومات محلك.</p></details>
+                <details><summary>هل أقدر أعدّل التصاميم بنفسي؟</summary><p>نعم. التصاميم الشهرية قوالب Canva، تغيّر فيها الألوان والصور والنصوص في دقائق.</p></details>
+                <details><summary>كم سعر باقة التصاميم الشهرية؟</summary><p>30 تصميم في الشهر بـ $49. باقة 3 شهور بـ $129 (90 تصميم)، وباقة سنة كاملة بـ $449 (360 تصميم).</p></details>
+                <details><summary>كيف أطبع البوستر؟</summary><p>نسلمك ملف PDF بدقة 300 dpi مع هوامش القص، بمقاس A4 أو A3. تعطيه لأي مطبعة قريبة منك ويطبع بدون تعديل.</p></details>
+                <details><summary>كيف أطلب؟</summary><p>اضغط زر «اطلب على واتساب» تحت الباقة اللي تبيها، أو اترك رقمك في النموذج ونرد عليك.</p></details>
+            </div>
+        </div>
+    </section>
+    <!-- faq:end -->
 
     <!-- blog-latest:start -->
     <section class="latest" id="blog">
