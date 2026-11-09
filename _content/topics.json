@@ -395,7 +395,9 @@
     "audience": "salons",
     "angle": "تصميم عرض موسمي يقرؤه الزبون في ثانيتين",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "salon-instagram-seasonal-offers",
+    "seq": 38
   },
   {
     "keyword": "محتوى العيادات في رمضان",
