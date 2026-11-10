@@ -215,8 +215,10 @@
     "keyword": "عبارات افتتاح كافيه",
     "audience": "cafes",
     "angle": "صيغ جاهزة لإعلان افتتاح كافيه على انستقرام وواتساب",
-    "status": "pending",
-    "pillar": "cafe"
+    "status": "drafted",
+    "pillar": "cafe",
+    "slug": "cafe-opening-phrases",
+    "seq": 39
   },
   {
     "keyword": "الرد على تقييم سلبي مطعم",
@@ -445,6 +447,41 @@
     "audience": "restaurants",
     "angle": "شبكة 9 منشورات ملخبطة ثم مرتبة بقالبين ولونين",
     "pillar": "before_after",
+    "status": "pending"
+  },
+  {
+    "keyword": "ردود رسائل الصالون على انستقرام",
+    "audience": "salons",
+    "angle": "ردود جاهزة لأسئلة بكم وفيه موعد ووين مكانكم",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "أفكار ريلز لصالون نسائي",
+    "audience": "salons",
+    "angle": "10 أفكار ريلز تتصور في الصالون بدون وجوه العميلات",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "هاشتاقات عيادات الأسنان",
+    "audience": "clinics",
+    "angle": "هاشتاقات بالحي والخدمة بدل الهاشتاقات العامة",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "تصميم منيو خدمات الصالون",
+    "audience": "salons",
+    "angle": "قائمة خدمات وأسعار تنقرأ على الجوال في ستوري واحد",
+    "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "منشور ترحيب طبيب جديد في العيادة",
+    "audience": "clinics",
+    "angle": "كيف تعرّف المراجعين بطبيب جديد: الاسم والتخصص والمواعيد",
+    "pillar": "beauty",
     "status": "pending"
   }
 ]
