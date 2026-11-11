@@ -314,8 +314,10 @@
     "keyword": "باركود منيو مطعم",
     "audience": "restaurants",
     "angle": "وين تحط الباركود وإيش يفتح: ملف PDF ولا صفحة تفتح على الجوال",
-    "status": "pending",
-    "pillar": "landing"
+    "status": "drafted",
+    "pillar": "landing",
+    "slug": "restaurant-menu-qr-code",
+    "seq": 40
   },
   {
     "keyword": "حجز طاولة مطعم أونلاين",
@@ -482,6 +484,41 @@
     "audience": "clinics",
     "angle": "كيف تعرّف المراجعين بطبيب جديد: الاسم والتخصص والمواعيد",
     "pillar": "beauty",
+    "status": "pending"
+  },
+  {
+    "keyword": "كابشن قهوة الصباح للكافيه",
+    "audience": "cafes",
+    "angle": "كابشنات قصيرة لمنشور الصباح من 7 إلى 10: كوب اليوم، السعر، وسؤال واحد",
+    "pillar": "cafe",
+    "status": "pending"
+  },
+  {
+    "keyword": "أفكار منشورات شتوية للكافيه",
+    "audience": "cafes",
+    "angle": "مشروبات الشتا على انستقرام: هوت شوكليت وسحلب، صورة، كابشن، وموعد نشر",
+    "pillar": "cafe",
+    "status": "pending"
+  },
+  {
+    "keyword": "تصوير الحلا في الكافيه",
+    "audience": "cafes",
+    "angle": "زوايا تصوير الكيك والكوكيز بالجوال جنب النافذة، وإيش تحط في الخلفية",
+    "pillar": "cafe",
+    "status": "pending"
+  },
+  {
+    "keyword": "ريلز تحضير القهوة",
+    "audience": "cafes",
+    "angle": "لقطات تحضير V60 والإسبريسو في 15 ثانية: ترتيب اللقطات والنص على الشاشة",
+    "pillar": "cafe",
+    "status": "pending"
+  },
+  {
+    "keyword": "منشور بطاقة ولاء للكافيه",
+    "audience": "cafes",
+    "angle": "كيف تعلن عن بطاقة الختم: الكوب العاشر مجاني، الصيغة والتصميم والكابشن",
+    "pillar": "cafe",
     "status": "pending"
   }
 ]
