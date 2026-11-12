@@ -408,7 +408,9 @@
     "audience": "clinics",
     "angle": "جدول 30 يوم لعيادة: نصائح ومواعيد ومعايدة",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "clinic-ramadan-content-plan",
+    "seq": 41
   },
   {
     "keyword": "قبل وبعد منشور مطعم",
