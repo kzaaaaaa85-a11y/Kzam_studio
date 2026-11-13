@@ -183,8 +183,10 @@
     "keyword": "زيادة متابعين مطعم على انستقرام",
     "audience": "restaurants",
     "angle": "متابعين من نفس الحي: الموقع الجغرافي، التعاون مع حسابات المدينة، الطاولة نفسها",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-local-instagram-followers",
+    "seq": 42
   },
   {
     "keyword": "أفكار عروض للكافيهات",
