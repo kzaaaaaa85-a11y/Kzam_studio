@@ -446,7 +446,9 @@
     "audience": "clinics",
     "angle": "كابشن طبي معقد يتحول لسطرين يفهمهم المراجع",
     "pillar": "before_after",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "clinic-caption-before-after",
+    "seq": 43
   },
   {
     "keyword": "قبل وبعد شبكة انستقرام",
