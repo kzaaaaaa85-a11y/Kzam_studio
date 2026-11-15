@@ -201,8 +201,10 @@
     "keyword": "عبارات تسويقية للمطاعم",
     "audience": "restaurants",
     "angle": "جمل قصيرة للبنرات والمنشورات، وليش الجملة المحددة تبيع أكثر",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-marketing-phrases",
+    "seq": 44
   },
   {
     "keyword": "خطة محتوى كافيه",
@@ -526,5 +528,40 @@
     "angle": "كيف تعلن عن بطاقة الختم: الكوب العاشر مجاني، الصيغة والتصميم والكابشن",
     "pillar": "cafe",
     "status": "pending"
+  },
+  {
+    "keyword": "قبل وبعد ستوري عرض كافيه",
+    "audience": "cafes",
+    "angle": "ستوري عرض مزدحم بالكلام ثم نسخة فيها سطر واحد وسعر ووقت",
+    "status": "pending",
+    "pillar": "before_after"
+  },
+  {
+    "keyword": "قبل وبعد منيو مطعم",
+    "audience": "restaurants",
+    "angle": "منيو مطبوع مكتظ يتحول لمنيو مرتب بالأقسام والأسعار",
+    "status": "pending",
+    "pillar": "before_after"
+  },
+  {
+    "keyword": "قبل وبعد صورة طبق",
+    "audience": "restaurants",
+    "angle": "نفس الطبق بصورة ليلية مظلمة ثم صورة عند الشباك وإيش تغير",
+    "status": "pending",
+    "pillar": "before_after"
+  },
+  {
+    "keyword": "قبل وبعد رد على تعليق",
+    "audience": "salons",
+    "angle": "رد جاف على تعليق زبونة ثم رد يحول السؤال لحجز",
+    "status": "pending",
+    "pillar": "before_after"
+  },
+  {
+    "keyword": "قبل وبعد صفحة هبوط مطعم",
+    "audience": "restaurants",
+    "angle": "صفحة تبدأ بقصة المطعم ثم صفحة تبدأ بالساعات والطلب",
+    "status": "pending",
+    "pillar": "before_after"
   }
 ]
