@@ -464,7 +464,9 @@
     "audience": "salons",
     "angle": "ردود جاهزة لأسئلة بكم وفيه موعد ووين مكانكم",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "salon-instagram-dm-replies",
+    "seq": 45
   },
   {
     "keyword": "أفكار ريلز لصالون نسائي",
