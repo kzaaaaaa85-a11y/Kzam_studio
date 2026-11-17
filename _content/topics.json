@@ -235,8 +235,10 @@
     "keyword": "عبارات تسويقية للقهوة",
     "audience": "cafes",
     "angle": "جمل قصيرة للكوب والبنر والمنشور",
-    "status": "pending",
-    "pillar": "cafe"
+    "status": "drafted",
+    "pillar": "cafe",
+    "slug": "coffee-marketing-phrases",
+    "seq": 46
   },
   {
     "keyword": "أفكار محتوى مطعم برجر",
