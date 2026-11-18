@@ -329,8 +329,10 @@
     "keyword": "حجز طاولة مطعم أونلاين",
     "audience": "restaurants",
     "angle": "نموذج حجز من 4 خانات يوصلك على واتساب",
-    "status": "pending",
-    "pillar": "landing"
+    "status": "drafted",
+    "pillar": "landing",
+    "slug": "restaurant-online-table-booking",
+    "seq": 47
   },
   {
     "keyword": "كتابة وصف مطعم",
