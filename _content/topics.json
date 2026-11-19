@@ -477,7 +477,9 @@
     "audience": "salons",
     "angle": "10 أفكار ريلز تتصور في الصالون بدون وجوه العميلات",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "salon-reels-ideas-no-faces",
+    "seq": 48
   },
   {
     "keyword": "هاشتاقات عيادات الأسنان",
