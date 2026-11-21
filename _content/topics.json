@@ -463,7 +463,9 @@
     "audience": "restaurants",
     "angle": "شبكة 9 منشورات ملخبطة ثم مرتبة بقالبين ولونين",
     "pillar": "before_after",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "restaurant-instagram-grid-before-after",
+    "seq": 50
   },
   {
     "keyword": "ردود رسائل الصالون على انستقرام",
