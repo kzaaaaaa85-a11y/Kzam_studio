@@ -246,8 +246,10 @@
     "keyword": "أفكار محتوى مطعم برجر",
     "audience": "restaurants",
     "angle": "لقطات البرجر اللي توقف التمرير: الجبن، القطع، البخار",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "burger-restaurant-content-ideas",
+    "seq": 51
   },
   {
     "keyword": "مسابقات انستقرام للمطاعم",
