@@ -301,7 +301,9 @@ def article_html(post, others, preview_cover=None):
     extra = ('<script type="application/ld+json">'
              + json.dumps(ld, ensure_ascii=False).replace('</', '<\\/') + '</script>\n')
     preview = preview_cover is not None
-    page = head(f'{post["title"]} | {BRAND}', post['description'], url, 'article',
+    # Google cuts titles past ~60 chars: add the brand only when it still fits (OpenSEO audit, 23 Nov 2026)
+    full_title = f'{post["title"]} | {BRAND}'
+    page = head(full_title if len(full_title) <= 60 else post['title'], post['description'], url, 'article',
                 image=f'{url}cover.jpg', extra=extra, noindex=preview, preview=preview)
     if preview:
         page += '<div class="draft">مسودة للمراجعة: غير منشورة على الموقع</div>\n'
@@ -401,6 +403,7 @@ def build():
     home = replace_block(home, 'blog-latest', latest)
     write_text(home_path, home)
     urls = [(SITE + '/', posts[0]['date'] if posts else today())]
+    urls.append((SITE + '/social-media-design-prices-saudi/', '2026-11-23'))  # hand-written landing page
     if posts:
         urls.append((SITE + '/blog/', posts[0]['date']))
         urls += [(f'{SITE}/blog/{p["slug"]}/', p.get('updated', p['date'])) for p in posts]
