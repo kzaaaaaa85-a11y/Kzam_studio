@@ -275,3 +275,11 @@ pin linking to its article. This is a backlink source, so the pin link is always
 - Never touch the landing page copy, prices, PayPal links, or `CNAME`.
 - Never push anything other than fast-forward commits. If a push is rejected, `git pull --rebase`
   and try once more. If it still fails, stop and report.
+
+## SEO notes (23 Nov 2026)
+
+- `build` adds " | Kzam Studio" to an article title only when the result stays within 60 characters.
+- Each article's "مقالات أخرى" box links to posts with the same reel theme, then date neighbours,
+  so older posts keep getting internal links. Do not change it back to "3 newest posts".
+- Each post also gets a video watch page at `/blog/<slug>/reel/` (VideoObject schema lives there,
+  not on the article), so Google can index the reels.

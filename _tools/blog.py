@@ -289,11 +289,6 @@ def article_html(post, others, preview_cover=None):
         'author': {'@type': 'Organization', 'name': BRAND, 'url': SITE + '/'},
         'publisher': {'@type': 'Organization', 'name': BRAND, 'url': SITE + '/'},
     }, {
-        '@context': 'https://schema.org', '@type': 'VideoObject',
-        'name': post['h1'], 'description': post.get('reel_caption') or post['description'],
-        'thumbnailUrl': f'{url}cover.jpg', 'uploadDate': date + 'T08:00:00+02:00',
-        'duration': f'PT{seconds}S', 'contentUrl': f'{url}reel.mp4',
-    }, {
         '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
             {'@type': 'ListItem', 'position': 1, 'name': 'الرئيسية', 'item': SITE + '/'},
             {'@type': 'ListItem', 'position': 2, 'name': 'المدونة', 'item': SITE + '/blog/'},
@@ -312,7 +307,7 @@ def article_html(post, others, preview_cover=None):
     else:
         media = ('<video controls playsinline muted loop preload="metadata" poster="cover.jpg">'
                  '<source src="reel.mp4" type="video/mp4"></video>'
-                 f'<figcaption>{e(post.get("reel_caption", ""))}</figcaption>')
+                 f'<figcaption>{e(post.get("reel_caption", ""))} · <a href="reel/">صفحة الفيديو</a></figcaption>')
     body = post['body']
     related = ''
     if others:
@@ -375,15 +370,81 @@ def replace_block(text, name, content):
     return pattern.sub(lambda m: m.group(1) + content + m.group(2), text)
 
 
+def related_posts(posts, i, n=3):
+    """Pick n related posts. Same reel theme first, then date neighbours, wrapping around, so
+    every post (not only the newest 3) gets links from other articles and Google keeps crawling
+    it (Search Console 'crawled, not indexed', 23 Nov 2026)."""
+    post, total = posts[i], len(posts)
+    theme = post.get('reel', {}).get('theme')
+    order = [posts[(i + k) % total] for k in range(1, total)]
+    picked = [p for p in order if theme and p.get('reel', {}).get('theme') == theme][:n - 1]
+    for p in order:
+        if len(picked) >= n:
+            break
+        if p not in picked:
+            picked.append(p)
+    return picked
+
+
+def reel_page_html(post):
+    """Watch page where the reel is the main content, so Google can index the video
+    (Search Console: 'video isn't on a watch page', 23 Nov 2026)."""
+    slug = post['slug']
+    art = f'{SITE}/blog/{slug}/'
+    url = f'{art}reel/'
+    date = post.get('date') or today()
+    seconds = int(round(post.get('reel_seconds', 14)))
+    reel = post.get('reel', {})
+    name = 'فيديو: ' + post['h1']
+    desc = post.get('reel_caption') or post['description']
+    ld = [{'@context': 'https://schema.org', '@type': 'VideoObject', 'name': name,
+           'description': desc, 'thumbnailUrl': f'{art}cover.jpg',
+           'uploadDate': date + 'T08:00:00+02:00', 'duration': f'PT{seconds}S',
+           'contentUrl': f'{art}reel.mp4', 'embedUrl': url, 'inLanguage': 'ar'},
+          {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+              {'@type': 'ListItem', 'position': 1, 'name': 'الرئيسية', 'item': SITE + '/'},
+              {'@type': 'ListItem', 'position': 2, 'name': 'المدونة', 'item': SITE + '/blog/'},
+              {'@type': 'ListItem', 'position': 3, 'name': post['h1'], 'item': art},
+              {'@type': 'ListItem', 'position': 4, 'name': 'الفيديو', 'item': url}]}]
+    extra = ('<script type="application/ld+json">'
+             + json.dumps(ld, ensure_ascii=False).replace('</', '<\\/') + '</script>\n')
+    title = name if len(name) <= 60 else 'فيديو: ' + post['keyword']
+    page = head(title, desc, url, 'video.other', image=f'{art}cover.jpg', extra=extra)
+    points = ''.join(f'<li><strong>{e(pt["title"])}</strong>'
+                     + (f': {e(pt["sub"])}' if pt.get('sub') else '') + '</li>'
+                     for pt in reel.get('points', []))
+    hook = ' '.join(reel.get('hook', []))
+    page += f"""{HEADER}
+<main>
+<nav class="crumbs" aria-label="مسار الصفحة"><a href="/">الرئيسية</a> ‹ <a href="/blog/">المدونة</a> ‹ <a href="/blog/{slug}/">{e(post['h1'])}</a></nav>
+<article>
+<h1>{e(name)}</h1>
+<figure class="reel"><video controls playsinline preload="metadata" poster="../cover.jpg"><source src="../reel.mp4" type="video/mp4"></video>
+<figcaption>{e(desc)}</figcaption></figure>
+<h2>إيش في الفيديو</h2>
+<p>{e(hook)}</p>
+<ul>{points}</ul>
+<p>الشرح الكامل مع الأمثلة في المقال: <a href="/blog/{slug}/">{e(post['h1'])}</a>.</p>
+</article>
+{CTA}
+</main>
+{FOOTER}
+</body>
+</html>
+"""
+    return page
+
+
 def build():
     posts = published()
     for i, post in enumerate(posts):
-        others = [p for p in posts if p['slug'] != post['slug']]
+        others = related_posts(posts, i)
         folder = os.path.join(BLOG, post['slug'])
         for media in ('reel.mp4', 'cover.jpg'):
             if not os.path.exists(os.path.join(folder, media)):
                 sys.exit(f'blog/{post["slug"]}/{media} is missing')
         write_text(os.path.join(folder, 'index.html'), article_html(post, others))
+        write_text(os.path.join(folder, 'reel', 'index.html'), reel_page_html(post))
     home_path = os.path.join(ROOT, 'index.html')
     with open(home_path, encoding='utf-8') as fh:
         home = fh.read()
@@ -407,6 +468,7 @@ def build():
     if posts:
         urls.append((SITE + '/blog/', posts[0]['date']))
         urls += [(f'{SITE}/blog/{p["slug"]}/', p.get('updated', p['date'])) for p in posts]
+        urls += [(f'{SITE}/blog/{p["slug"]}/reel/', p['date']) for p in posts]
     xml = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     xml += [f'  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>' for u, d in urls]
