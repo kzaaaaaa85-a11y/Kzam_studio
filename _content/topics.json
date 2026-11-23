@@ -492,7 +492,9 @@
     "audience": "clinics",
     "angle": "هاشتاقات بالحي والخدمة بدل الهاشتاقات العامة",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "dental-clinic-hashtags",
+    "seq": 52
   },
   {
     "keyword": "تصميم منيو خدمات الصالون",
