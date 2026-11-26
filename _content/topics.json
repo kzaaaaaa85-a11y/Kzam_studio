@@ -503,7 +503,9 @@
     "audience": "salons",
     "angle": "قائمة خدمات وأسعار تنقرأ على الجوال في ستوري واحد",
     "pillar": "beauty",
-    "status": "pending"
+    "status": "drafted",
+    "slug": "salon-service-menu-design",
+    "seq": 55
   },
   {
     "keyword": "منشور ترحيب طبيب جديد في العيادة",
@@ -583,5 +585,40 @@
     "angle": "صفحة تبدأ بقصة المطعم ثم صفحة تبدأ بالساعات والطلب",
     "status": "pending",
     "pillar": "before_after"
+  },
+  {
+    "keyword": "صفحة هبوط لصالون تجميل",
+    "audience": "salons",
+    "angle": "صفحة وحدة فيها الخدمات والأسعار وزر حجز على واتساب، قسم بقسم",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "صفحة حجز موعد عيادة",
+    "audience": "clinics",
+    "angle": "صفحة حجز من 4 خانات توصل على واتساب، بدون وعود علاجية",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "منيو إلكتروني للمطاعم بالصور",
+    "audience": "restaurants",
+    "angle": "متى تحط صورة للصنف ومتى يكفي الاسم والسعر، وترتيب الأقسام",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "صفحة عروض المطعم",
+    "audience": "restaurants",
+    "angle": "صفحة عرض واحد لها رابط في البايو والستوري، وتنشال بعد ما يخلص العرض",
+    "status": "pending",
+    "pillar": "landing"
+  },
+  {
+    "keyword": "رابط طلب كافيه للسيارات",
+    "audience": "cafes",
+    "angle": "طلب من السيارة برابط: الصنف، رقم اللوحة، ووقت الوصول",
+    "status": "pending",
+    "pillar": "landing"
   }
 ]
