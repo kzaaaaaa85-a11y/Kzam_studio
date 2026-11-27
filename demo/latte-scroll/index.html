@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0B0806">
+<title>بُن وليل | نموذج منيو مقهى يتركّب مع السكرول من Kzam Studio</title>
+<meta name="description" content="نموذج تجريبي لصفحة مقهى: انزل بالصفحة وكوب اللاتيه يتركّب طبقة طبقة، مع منيو بالأسعار وزر طلب واتساب.">
+<link rel="canonical" href="https://kzamstudio.com/demo/latte-scroll/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kzam Studio">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:title" content="بُن وليل | منيو مقهى يتركّب مع السكرول">
+<meta property="og:description" content="انزل بالصفحة وكوب اللاتيه يتركّب قدامك. نموذج من Kzam Studio.">
+<meta property="og:url" content="https://kzamstudio.com/demo/latte-scroll/">
+<meta property="og:image" content="https://kzamstudio.com/demo/latte-scroll/img/og.jpg">
+<link rel="preload" href="fonts/aref-ruqaa-arabic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/readex-pro-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/f001.webp" as="image">
+<style>
+@font-face { font-family: 'Aref Ruqaa'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/aref-ruqaa-arabic-700-normal.woff2) format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC; }
+@font-face { font-family: 'Aref Ruqaa'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/aref-ruqaa-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: 'Readex Pro'; font-style: normal; font-weight: 160 700; font-display: swap; src: url(fonts/readex-pro-arabic-wght-normal.woff2) format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC; }
+@font-face { font-family: 'Readex Pro'; font-style: normal; font-weight: 160 700; font-display: swap; src: url(fonts/readex-pro-latin-wght-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+2000-206F; }
+:root {
+  --ground: #0B0806;
+  --surface: #17110D;
+  --line: #2E241C;
+  --text: #F5EFE4;
+  --muted: #B9AC98;
+  --gold: #D4AF37;
+  --gold-hi: #E9C866;
+  --display: 'Aref Ruqaa', 'Amiri', serif;
+  --body: 'Readex Pro', 'Segoe UI', Tahoma, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--ground); }
+body { background: var(--ground); color: var(--text); font-family: var(--body); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+.top { position: fixed; inset: 0 0 auto 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; padding-top: max(14px, env(safe-area-inset-top)); background: linear-gradient(to bottom, rgba(11,8,6,.85), rgba(11,8,6,0)); }
+.logo { font-family: var(--display); font-size: 1.6rem; color: var(--gold); text-decoration: none; }
+.top nav { display: flex; gap: 18px; font-size: .9rem; }
+.top nav a { text-decoration: none; color: var(--muted); }
+.top nav a:hover { color: var(--text); }
+
+.scrub { position: relative; height: 420vh; }
+.stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+#cup { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,8,6,.92) 0%, rgba(11,8,6,.55) 22%, rgba(11,8,6,0) 42%), radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(11,8,6,.75) 100%); pointer-events: none; }
+.cap { position: absolute; inset-inline: 0; bottom: 9vh; text-align: center; padding: 0 24px; opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease; pointer-events: none; }
+.cap.on { opacity: 1; transform: none; pointer-events: auto; }
+.cap .k { display: inline-block; font-size: .8rem; letter-spacing: .08em; color: var(--gold); border: 1px solid rgba(212,175,55,.45); border-radius: 999px; padding: 2px 14px; margin-bottom: 10px; }
+.cap h1, .cap h2 { font-family: var(--display); font-weight: 700; line-height: 1.25; }
+.cap h1 { font-size: clamp(2.2rem, 7vw, 4.2rem); }
+.cap h2 { font-size: clamp(1.8rem, 5.5vw, 3rem); }
+.cap p { color: var(--muted); font-size: 1.05rem; margin-top: 6px; }
+.cap .price { color: var(--gold-hi); font-size: 1.4rem; font-weight: 600; margin-top: 4px; }
+.hint { position: absolute; bottom: 4vh; inset-inline: 0; text-align: center; color: var(--muted); font-size: .85rem; transition: opacity .3s; }
+.hint::after { content: ''; display: block; width: 1px; height: 34px; margin: 8px auto 0; background: linear-gradient(var(--gold), transparent); animation: drop 1.6s ease-in-out infinite; }
+@keyframes drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+.btn { display: inline-block; background: var(--gold); color: #1A1208; font-weight: 600; text-decoration: none; border: 0; border-radius: 999px; padding: 12px 28px; font-family: var(--body); font-size: 1rem; cursor: pointer; margin-top: 14px; }
+.btn:hover { background: var(--gold-hi); }
+.btn.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
+section.band { padding: 90px 0; border-top: 1px solid var(--line); }
+.band h2 { font-family: var(--display); font-size: clamp(1.9rem, 4.5vw, 2.6rem); color: var(--gold); margin-bottom: 8px; }
+.band .lead { color: var(--muted); margin-bottom: 36px; max-width: 560px; }
+
+.order { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
+.order img { width: 100%; height: auto; border-radius: 18px; display: block; border: 1px solid var(--line); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px; }
+.card h3 { font-family: var(--display); font-size: 2rem; line-height: 1.3; }
+.card .desc { color: var(--muted); font-size: .95rem; }
+.card .big { font-size: 1.8rem; color: var(--gold-hi); font-weight: 600; margin: 10px 0 16px; }
+.seg { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.seg button { font-family: var(--body); background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 8px 16px; font-size: .95rem; cursor: pointer; }
+.seg button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,.08); }
+.row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.qty { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 10px; }
+.qty button { background: none; border: 0; color: var(--text); width: 40px; height: 42px; font-size: 1.2rem; cursor: pointer; }
+.qty output { min-width: 28px; text-align: center; }
+.row .btn { margin-top: 0; }
+
+.menu { list-style: none; display: grid; grid-template-columns: 1fr; gap: 0 48px; }
+.menu li { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px dashed var(--line); }
+.menu b { font-weight: 500; font-size: 1.05rem; }
+.menu small { display: block; color: var(--muted); font-size: .85rem; }
+.menu span { color: var(--gold-hi); white-space: nowrap; }
+
+.made { text-align: center; }
+.made h2 { color: var(--text); }
+.made .lead { margin-inline: auto; }
+footer { padding: 30px 22px calc(30px + env(safe-area-inset-bottom)); text-align: center; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+footer a { color: var(--gold); }
+
+@media (min-width: 820px) {
+  .shade { background: linear-gradient(to left, rgba(11,8,6,.9) 0%, rgba(11,8,6,.5) 26%, rgba(11,8,6,0) 45%), radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(11,8,6,.75) 100%); }
+  .cap { inset-inline: 6vw auto; right: 6vw; left: auto; bottom: auto; top: 50%; width: min(420px, 34vw); text-align: right; transform: translateY(calc(-50% + 14px)); }
+  .cap.on { transform: translateY(-50%); }
+  .order { grid-template-columns: 1.1fr 1fr; }
+  .menu { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) { .top nav { display: none; } }
+@media (prefers-reduced-motion: reduce) { .cap { transition: none; } .hint::after { animation: none; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#">بُن وليل</a>
+  <nav aria-label="أقسام الصفحة"><a href="#order">اطلب</a><a href="#menu">المنيو</a><a href="#visit">الموقع</a></nav>
+</header>
+
+<main>
+  <section class="scrub" id="scrub" aria-label="كوب لاتيه يتركّب مع السكرول">
+    <div class="stage">
+      <canvas id="cup" role="img" aria-label="طبقات لاتيه تنزل في الكوب: إسبريسو، حليب، رغوة، ورسمة قلب"></canvas>
+      <div class="shade"></div>
+      <div class="cap" data-from="0" data-to="0.16">
+        <span class="k">مقهى مختص · الرياض</span>
+        <h1>قهوتك تتركّب قدامك</h1>
+        <p>انزل بالصفحة وشوف</p>
+      </div>
+      <div class="cap" data-from="0.22" data-to="0.42"><span class="k">الطبقة الأولى</span><h2>دبل إسبريسو</h2><p>بن إثيوبي محمّص عندنا كل أسبوع</p></div>
+      <div class="cap" data-from="0.46" data-to="0.64"><span class="k">الطبقة الثانية</span><h2>حليب على البخار</h2><p>كامل الدسم أو شوفان، على كيفك</p></div>
+      <div class="cap" data-from="0.68" data-to="0.84"><span class="k">الطبقة الثالثة</span><h2>رغوة ناعمة ورسمة قلب</h2><p>بيد باريستا عنده 6 سنين خبرة</p></div>
+      <div class="cap" data-from="0.88" data-to="1.01">
+        <h2>لاتيه الهيل</h2>
+        <p class="price">18 ر.س</p>
+        <a class="btn" href="#order">اطلبه الحين</a>
+      </div>
+      <div class="hint" id="hint">انزل</div>
+    </div>
+  </section>
+
+  <section class="band" id="order">
+    <div class="wrap order">
+      <img src="img/og.jpg" alt="كوب لاتيه الهيل جاهز مع رسمة قلب" width="1200" height="686" loading="lazy">
+      <div class="card">
+        <h3>لاتيه الهيل</h3>
+        <p class="desc">دبل إسبريسو، حليب على البخار، رشة هيل مطحون طازج.</p>
+        <div class="big" id="price">18 ر.س</div>
+        <div class="seg" role="group" aria-label="الحجم">
+          <button type="button" data-size="صغير" data-price="16" aria-pressed="false">صغير</button>
+          <button type="button" data-size="وسط" data-price="18" aria-pressed="true">وسط</button>
+          <button type="button" data-size="كبير" data-price="21" aria-pressed="false">كبير</button>
+        </div>
+        <div class="seg" role="group" aria-label="نوع الحليب">
+          <button type="button" data-milk="كامل الدسم" aria-pressed="true">كامل الدسم</button>
+          <button type="button" data-milk="شوفان" aria-pressed="false">شوفان</button>
+        </div>
+        <div class="row">
+          <div class="qty"><button type="button" id="minus" aria-label="أقل">−</button><output id="q">1</output><button type="button" id="plus" aria-label="أكثر">+</button></div>
+          <a class="btn" id="wa" href="#" target="_blank" rel="noopener">اطلب على واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="menu">
+    <div class="wrap">
+      <h2>المنيو</h2>
+      <p class="lead">كل مشروب نحضّره لما تطلبه، ما عندنا شي جاهز في الثلاجة.</p>
+      <ul class="menu">
+        <li><div><b>لاتيه الهيل</b><small>إسبريسو، حليب، هيل</small></div><span>18 ر.س</span></li>
+        <li><div><b>فلات وايت</b><small>دبل ريستريتو وحليب ناعم</small></div><span>17 ر.س</span></li>
+        <li><div><b>V60 إثيوبي</b><small>تقطير يدوي، 300 مل</small></div><span>22 ر.س</span></li>
+        <li><div><b>سبانش لاتيه بارد</b><small>حليب مكثّف وثلج</small></div><span>19 ر.س</span></li>
+        <li><div><b>كرواسون زبدة</b><small>يطلع من الفرن الساعة 7</small></div><span>12 ر.س</span></li>
+        <li><div><b>كيكة التمر</b><small>بصوص الكراميل</small></div><span>15 ر.س</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="visit">
+    <div class="wrap">
+      <h2>تلاقينا هنا</h2>
+      <p class="lead">حي الملقا، الرياض · من 6 الصبح لين 1 بالليل · مواقف قدام الباب.</p>
+    </div>
+  </section>
+
+  <section class="band made">
+    <div class="wrap">
+      <h2>تبغى صفحة زي هذي لمقهاك؟</h2>
+      <p class="lead">هذي صفحة تجريبية من Kzam Studio. نصمم لك نفسها بصور مشروباتك واسم محلك، ونكتب النص بالعربي.</p>
+      <a class="btn" href="https://wa.me/33777897299?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%B5%D9%81%D8%AD%D8%A9%20%D8%B2%D9%8A%20%D9%86%D9%85%D9%88%D8%B0%D8%AC%20%D8%A7%D9%84%D9%84%D8%A7%D8%AA%D9%8A%D9%87%20%D9%84%D9%85%D9%82%D9%87%D8%A7%D9%8A" target="_blank" rel="noopener">كلّمنا على واتساب</a>
+      <a class="btn ghost" href="https://kzamstudio.com/#landing">شوف الأسعار</a>
+    </div>
+  </section>
+</main>
+
+<footer>«بُن وليل» مقهى تخيّلي لعرض الفكرة. تصميم <a href="https://kzamstudio.com/">Kzam Studio</a></footer>
+<script src="app.js" defer></script>
+</body>
+</html>
