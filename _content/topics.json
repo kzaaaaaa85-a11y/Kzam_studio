@@ -255,8 +255,10 @@
     "keyword": "مسابقات انستقرام للمطاعم",
     "audience": "restaurants",
     "angle": "مسابقة تجيب زبائن من الحي لا متابعين من دولة ثانية",
-    "status": "pending",
-    "pillar": "restaurant"
+    "status": "drafted",
+    "pillar": "restaurant",
+    "slug": "restaurant-instagram-contest",
+    "seq": 56
   },
   {
     "keyword": "منيو مطعم على انستقرام",
@@ -620,5 +622,40 @@
     "angle": "طلب من السيارة برابط: الصنف، رقم اللوحة، ووقت الوصول",
     "status": "pending",
     "pillar": "landing"
+  },
+  {
+    "keyword": "كابشن صالون نسائي",
+    "audience": "salons",
+    "angle": "كابشنات قصيرة لكل خدمة: الخدمة والمدة والسعر وطريقة الحجز",
+    "status": "pending",
+    "pillar": "beauty"
+  },
+  {
+    "keyword": "أفكار محتوى عيادة جلدية",
+    "audience": "clinics",
+    "angle": "محتوى توعوي بدون صور مرضى ولا وعود بنتائج",
+    "status": "pending",
+    "pillar": "beauty"
+  },
+  {
+    "keyword": "تصميم بوست عرض للعيادة",
+    "audience": "clinics",
+    "angle": "بوست عرض واضح: الخدمة والسعر والمدة والشروط في سطر",
+    "status": "pending",
+    "pillar": "beauty"
+  },
+  {
+    "keyword": "هاشتاقات صالونات التجميل",
+    "audience": "salons",
+    "angle": "هاشتاقات بالحي والخدمة بدل الهاشتاقات العامة المزدحمة",
+    "status": "pending",
+    "pillar": "beauty"
+  },
+  {
+    "keyword": "هايلايت انستقرام للصالون",
+    "audience": "salons",
+    "angle": "5 هايلايت تجاوب الزبونة قبل ما تراسلك: الأسعار والمكان والحجز",
+    "status": "pending",
+    "pillar": "beauty"
   }
 ]
